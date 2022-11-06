@@ -78,19 +78,157 @@ The last main feature is a live train tracker, I want to create a live map with 
 
 ## C4-Model
 ### Level 2
-### Level 3
+![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-NS/C4Models-ContainerDiagram.png)
+
 ## Technology Stack
 ### Front-end Stack
+#### Web-based Application
+For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web-app without the need to rewrite it.
+It’s also a lightweight framework which makes my app a lot more responsive and faster.
+Lastly, I have some very entry level experience with Vue which isn’t enough to build a full web-application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web-app.
+For styling I use CSS and Bootstrap, this is a styling library which makes it very easy and fast to create a good-looking webpage.
+Furthermore, I use a npm-package called Axios. This package gives me the ability to easily create HTTP-requests to my back-end API.
+
+#### Desktop Application
+Secondly, I want to create a desktop application, this application will be build using Unity Engine. To develop in Unity, you need to use C# so that’s what I will be using.
+I will be able to use Unity to create a 3D interface for my live train and station tracker.
+Unity has a big asset store, here you can download (sometimes freely) models to use in your 3D environment.
+
 ### Back-end Stack
+#### Logic
+The back-end consists of multiple microservices, each microservice contains two or three of these components:
+-	Controller: Responsible for listening and responding to incoming requests.
+-	Service: This is where all the logic for the specific microservice is.
+-	Data Access Object (DAO): Responsible for communicating with the database and external API’s.
+The microservices are built with the SpringBoot framework and thus are written in Java.
+The reason I chose Java is, because I’ve used C# last semester and I want to learn a different language.
+I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.
+
+The back-end is made of microservices, I chose these because:
+1.	Improved scalability: It’s very easy to up or downgrade specific services or add a new service with a new feature without the need to dive deep into the code to change something. I can easily remove a service and the rest of the application should just continue to work.
+2.	Future-proofed: If a technology updates, I can easily replace a whole microservice with something better without the need to change code in other parts of my application which makes it very easy to maintain the application and keep updating it with the latest technologies and innovations.
+3.	Teamwork: This isn’t relevant for my individual project, but it is for the proftaak. With microservices you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
+
+#### External API
+I’m using an external API to get real-world data; I’ve chosen for the NS-API. 
+The API gives me access to a lot of NS data, e.g.:
+-	All the stations where NS or a Dutch regional train company operates with some information like number of tracks and coordinates.
+-	All the departures and arrivals from and to a specific station.
+-	Information about a specific train like how long the train is, what route it is driving and live coordinates.
+
 ## Conslusion
+I’ve decided that I won’t continue with this project. Of course, I will be able to use all the knowledge I’ve gathered in my next project. 
+I have come up with another idea which involves the Minecraft Server I play on with some friends. Because I play a lot on this server, it gives me a lot more motivation to make an application for this.
+
+&nbsp;
+&nbsp;
+&nbsp;
 # MCSTurtleTracker
 ## What is MCS?
+MCSynergy (or MCS for short) is a Minecraft Server where I play on with some friends, we have a mod installed called ComputerCraft which adds programmable computers and robots (turtles) to Minecraft. These are programmed in Lua and gives us the ability to automate a lot of things which wouldn’t normally be possible. 
+This mod has WebSocket connections and HTTP-requests build in which gives me the opportunity to share data between these turtles and some external application which is exactly what I’m going to build.
+
 ## Project Description
+I’m going to create an application which the users of the Minecraft server of me and my friends can use to see any relevant data about the turtles.
+All the turtles will send messages to a central system, this system will then send these messages to my back-end. The back-end will transform and save this data and the front-end can request this data. 
+E.g., the turtle is done with a task and needs help from a player, the turtle will then send a message and the webapp will show this message.
+The second feature in my application is to have as much as possible control over the turtles, I want to be able to start and stop scripts and manually send commands to a turtle. 
+If I have enough time, I want to recreate the whole turtle interface in my webapp so you can easily see what the turtle is doing.
+
 ## Requirements
+*S: Specification
+*R: Restriction
+
+&nbsp;
+### Functional Requirements
+**FR-01**: The user must be able to see a list of all the connected turtles
+-	**S-01.1:** In this screen a turtle must contain a name, a turtle-id, a status, and an assigned system.
+-	**S-01.2:** The user must be able to search for a turtle by name, turtle-id, and assigned system.
+-	**S-01.3:** The user must be able to filter the list by status.
+-	**S-01.4:** The user must be able to click on a turtle and be redirected to the corresponding detail page (FR-02).
+
+**FR-02:** The user must be able to see a detail page about every turtle.
+-	**S-02.1:** The user must be able to see these attributes about a turtle:
+o	Current location (in x, y, z coordinates)
+o	Current dimension
+o	Fuel level
+o	Inventory
+o	Current upgrades
+o	Status
+o	Name
+o	Turtle-id
+o	Assigned system
+-	**S-02.2:** The user must be able to see all the recently send messages from this turtle.
+-	**R-02.1:** The inventory of a turtle should only be inspected when the user presses on a button.
+
+**FR-03:** The user must be able to turn a turtle on/off.
+-	**S-03.1:** The user must be able to turn them on/off from their corresponding detail page (FR-02).
+-	**R-03.1:** The turtle must not completely be turned off; it should only stop with their current task or farm and return to their starting location.
+
+ **FR-04:** The user must see a list of all send messages.
+-	**S-04.1:** The user must see a turtle-id, name, status when being send, assigned system, message type and message for all send messages.
+-	**S-04.2:** The user must be able to filter the list by turtle-id, name, assigned system, and message type.
+-	**R-04.1:** If the message doesn’t have a known system, hide the message.
+
+**FR-05:** The user must be able to CRUD systems.
+-	**S-05.1:** The user must be able to turn the whole system on/off.
+-	**S-05.2:** The user must be able to specify which turtle is part of which system.
+-	**R-05.1:** The system must have a unique name.
+
+**FR-06:** The user must be able to use a help page to know how to implement the system on their turtles.
+-	**S-06.1:**  The user must be able to see what Lua methods should be called for the system to work
+-	**S-06.2:** The user must be able to see what Lua libraries are required for the system to work.
+-	**S-06.3:** The user must be able to see what configuration must be done on the turtles for the system to work.
+
+**FR-07:** The current Lua scripts shouldn’t have to be completely rewritten for the system to work.
+-	**R-07.1:** The user should only have to call one extra method at the start of the script for the system to work.
+-	**R-07.2:** The user should only have to configure the system once.
+
+&nbsp;
+&nbsp;
+### Non-functional Requirements
+**NFR-01:** The current Lua scripts shouldn’t become very much slower.
+-	**S-01.1:** The system should run parallel to the main script, so it doesn’t halt the main script.
+
+**NFR-02:** All the turtles should send their information to one central computer; this computer will then send them to the back-end.
+
+**NFR-03:** Only authorized users should be able to use this application.
+
+**NFR-04:** The central computer should save all the messages when the application is offline.
+-	**S-04.1:** When the application comes back online, the central computer should send all the missed messages.
+
+**NFR-05:** The Lua system should be very reliable.
+-	**S-05.1:** It should always catch errors and handle them.
+-	**S-05.2:** If the system crashes or is offline, the turtles should continue with their scripts and should not stop.
+
 ## User-stories
+**US1:** As a user I want to be able to see all the turtles so I can track them and know if something is wrong with them.
+
+**US2:** As a user I want to be able to see a detailed page about every turtle so I can see more information about them like their inventory.
+
+**US3:** As a user I want to be able to turn the turtles on/off, so I have more control over the turtles.
+
+**US4:** As a user I want to be able to see all the messages sent by the turtles, so I know when a turtle logs an error or warning and I need to do something about it.
+
+**US5:** As a user I want to be able to CRUD new MSC Systems so that I can easily add a newly build system to the app and don’t have to do some technical things.
+
+**US6:** As a user I want to be able to have a place where I can find information about how to implement the system and how it works so it is very easy for me to implement the system and I don’t have to ask someone for instructions.
+
+**US7:** As a user I don’t want to have to completely rewrite my scripts for the system to work because that would take a lot of wasted time and effort.
+
+**US8:** As a user I want to be able to sort turtles by MCS System so I don’t have to search through a big list to find a specific turtle.
+
+**US9:** As a user I want to be able to filter the messages by type, so I e.g., only see errors or warnings.
+
+**US10:** As a user I want to be able to see for how long a turtle has to wait before it starts a new run.
+
+
 ## C4-Model
 ### Level 1
+![Context Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C1.drawio.png)
 ### Level 2
+![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C2.drawio.png)
+
 ## Projects
 ### Front-end
 ### Back-end
