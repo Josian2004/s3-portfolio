@@ -25,6 +25,7 @@
     - [External API](#external-api)
   - [Software Quality](#software-quality)
   - [Continuous integration and deployment](#continuous-integration-and-deployment)
+    - [Containerization](#containerization)
     - [Pipeline](#pipeline)
     - [Deployment environment](#deployment-environment)
 
@@ -273,6 +274,83 @@ All the scripts for this mod are written in Lua.
 In our server we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information of all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
 
 ## Software Quality
+
 ## Continuous Integration and Deployment
+In order to automate the test and deploy process of my application, I implemented a CI/CD pipeline for both my webapp and server. This has been done with GitLab CI/CD.
+In order to keep my data secure, I've made environment variables for all the sensitive data like password, keys etc. These pipelines are automatically triggered when a push is made to either the main branch or development branch. However only when pushed to the main branch will the app be build and deployed, when pushed to the development branch it will only run the tests.
+
+### Containerization
+
+
 ### Pipeline
+#### Test Job
+```yaml
+run_tests:
+    stage: test
+    image: eclipse-temurin:17-jdk-alpine
+    before_script:
+        - chmod +x mvnw
+    script:
+        - ./mvnw test
+```
+This job is responsible for running all the necessary tests.
+
+#### Build Job
+```yaml
+build:
+    stage: build
+    image: eclipse-temurin:17-jdk-alpine
+    rules:
+        - if: '$CI_COMMIT_BRANCH == "main"'
+    before_script:
+        - chmod +x mvnw
+    script: "./mvnw install"
+    artifacts:
+        paths:
+        - target/*.jar
+```
+This job is responsible for building the application, it will run the *./mvnw install* command which will build the app into an executable .jar file and save it 
+so further jobs can use it. In *rules* I've specified that this job should only run when pushed to the main branch.
+
+#### Package Job
+```yaml
+package:
+    stage: package
+    rules:
+        - if: '$CI_COMMIT_BRANCH == "main"'    
+    script:
+        - docker build . -t $REGISTRY_URL/mcst_backend
+        - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD $REGISTRY_URL
+        - docker push $REGISTRY_URL/mcst_backend
+```
+This job is responsible for preparing my application to be deployed, it will firstly build the dockerimage with the correct environment variables and then push this image to a self-hosted Docker Registry. Because this is a secured registry, it will first need to login using secret variables before it can push an image.
+
+#### Deploy Job
+```yaml
+deploy:
+    stage: deploy
+    image: alpine:latest
+    rules:
+        - if: '$CI_COMMIT_BRANCH == "main"'
+    before_script:
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - apk update && apk add openssh-client bash
+        - eval $(ssh-agent -s)
+        - bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+    script:
+        - ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_URL "
+            docker-compose -f /media/josian/Hard\ Disk/Apps/MCST/Docker-compose/Backend/docker-compose.yml down &&
+            docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD $REGISTRY_URL &&
+            docker pull $REGISTRY_URL/mcst_backend:latest &&
+            docker-compose -f /media/josian/Hard\ Disk/Apps/MCST/Docker-compose/Backend/docker-compose.yml up -d"
+```
+This is the final job and it's responsible for deploying the application to a server. Alpine Linux doesn't natively have a ssh-client installed so that is what I'm doing manually in the *before script*. Then I have to add my *SSH_PRIVATE_KEY* to the client so it can connect to my server using that key.\
+It will then connect to my server over SSH and do a few things:
+1. It will run *docker-compose down* which will stop and remove the old container.
+2. It will login to my Docker Registry.
+3. It will pull the latest image which we pushed in the last job.
+4. Finally it will run *docker-compose up -d* which will start a new container with the latest image.
+And then my application is up and running again.
+
 ### Deployment Environment
