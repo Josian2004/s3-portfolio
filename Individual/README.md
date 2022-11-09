@@ -6,7 +6,6 @@
   - [Requirements](#requirements)
   - [C4-Model](#c4-model)
     - [Level 2](#level-2)
-    - [Level 3](#level-3)
   - [Technology stack](#technology-stack)
     - [Front-end stack](#front-end-stack)
     - [Back-end stack](#back-end-stack)
@@ -230,10 +229,49 @@ o	Assigned system
 ![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C2.drawio.png)
 
 ## Projects
-### Front-end
-### Back-end
+This project is actually working and deployed on my server so you can see it for yourself at:\
+https://mcst.josian.nl
+
+### [Front-end](https://git.fhict.nl/I483898/mcst-vue-frontend)
+For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web-app without the need to rewrite it.
+It’s also a lightweight framework which makes my app a lot more responsive and faster.\
+Lastly, I have some very entry level experience with Vue which isn’t enough to build a full web-application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web-app.\
+For styling I use CSS and Tailwind, this is a styling library which makes it very easy and fast to create a good-looking webpage.\
+Furthermore, I use a npm-package called Axios. This package gives me the ability to easily create HTTP-requests to the MCS Systems API (external API).
+
+### [Back-end](https://git.fhict.nl/I483898/mcst-springboot-backend)
+#### Logic
+The back-end consists of multiple microservices, each microservice contains two or three of these components:
+-	Controller: Responsible for listening and responding to incoming requests.
+-	Websocket Handlers: Responsible for listening for/sending messages over websocket.
+-	Service: This is where all the logic for the specific microservice is.
+-	Events: These are used for dependency inversion so that the service is independent from the e.g. websocket handlers.
+-	Repository: Part of Spring Data JPA and responsible for communicating with the database.
+-	Models: This is where all the data is being stored and used across the microservice.
+
+The microservices are built with the SpringBoot framework and thus are written in Java.
+The reason I chose Java is, because I’ve used C# last semester and I want to learn a different language.
+I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.\
+
+The back-end is made of microservices, I chose these because:
+1.	Improved scalability: It’s very easy to up or downgrade specific services or add a new service with a new feature without the need to dive deep into the code to change something. I can easily remove a service and the rest of the application should just continue to work.
+2.	Future-proofed: If a technology updates, I can easily replace a whole microservice with something better without the need to change code in other parts of my application which makes it very easy to maintain the application and keep updating it with the latest technologies and innovations.
+3.	Teamwork: This isn’t relevant for my individual project, but it is for the proftaak. With microservices you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
+
+#### Data Persistence
+I'm using the ORM Spring Data JPA because it is build-in in Spring Boot, the ORM is responsible for retreiving/saving all the data from my application.
+I'm using a MySQL database for storing the data.
+
 ### Resource Server
-### External API
+All my data is coming from the Minecraft server, it works as follows.\
+All the turtles (robots) send their data (location, message, etc.) to a central system over a "minecraft network". 
+When this central system receives a message, it will send the message over a websocket connection to the back-end server.\
+The system uses ComputerCraft (Minecraft Mod) which has a build-in websocket en HTTP feature to establish a connection with my back-end server.\
+All the scripts for this mod are written in Lua.
+
+### [External API](https://docs.naamdorpboot.xyz/systems-api)
+In our server we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information of all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
+
 ## Software Quality
 ## Continuous Integration and Deployment
 ### Pipeline
