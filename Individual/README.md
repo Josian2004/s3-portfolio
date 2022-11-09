@@ -442,7 +442,8 @@ It will then connect to my server over SSH and do a few things:
 And then my application is up and running again.
 
 ### Deployment Environment
-Even though it is sufficient for this semester to "deploy" to the Docker Hub, I felt that is wasn't complete until me and my friends could access my app from wherever we  are.\ 
+Even though it is sufficient for this semester to "deploy" to the Docker Hub, I felt that it wasn't complete until me and my friends could access my app from wherever we  are.
+
 So in the autumn break of 2022, I bought a HP Workstation from Marktplaats and repurposed it as a home server. I deleted Windows and installed Ubuntu because Linux is just way better and faster for a server than Windows.\
 Before I had bought this server, I came across a few issues with my CI/CD. First of all, the Docker Hub only allows for one free private repository which isn't enough for both my webapp and server so I would need to host my own registry somewhere. Second of all, Fontys doesn't have any shared GitLab-runners... So I needed to host these myself aswell. And lastly, I needed a place to deploy my app with the posibility to expose it to the internet.
 
