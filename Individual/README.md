@@ -280,7 +280,95 @@ In order to automate the test and deploy process of my application, I implemente
 In order to keep my data secure, I've made environment variables for all the sensitive data like password, keys etc. These pipelines are automatically triggered when a push is made to either the main branch or development branch. However only when pushed to the main branch will the app be build and deployed, when pushed to the development branch it will only run the tests.
 
 ### Containerization
+To easily deploy my application, I have made use of Docker. I've created a Dockerfile for both my front-end and back-end
+#### Front-end
+```Dockerfile
+# Dockerfile
+FROM node:lts-alpine
+LABEL maintainer="MCSDevTeam"
+RUN npm install -g http-server
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+CMD [ "http-server", "dist" ]
+```
+What this file does is, firstly it will install a http-server so I can run the app. Then it will copy the *package.json* and install all the necessary packages for the application to build. Then it will copy the rest of the files and build the application, this will then create a /dist folder which the http-server uses to start the app.
+```yaml
+# docker-compose.yml
+version: '3.4'
+services:
+    mcst_webapp:
+        container_name: MCST-WebApp
+        image: $REGISTRY_URL/mcst_webapp:latest
+        environment:
+            TZ: "Europe/Amsterdam"
+        ports:
+            - '25001:8080'
+        expose:
+            - '25001'
+        stdin_open: 'true'
+        tty: 'true'
+```
+When I'm ready to start the container, I will run this docker-compose file which will start the app with some specific settings like the port and timezone.
 
+#### Back-end
+```Dockerfile
+# Dockerfile
+FROM eclipse-temurin:17-jdk-alpine
+LABEL maintainer="MCSDevTeam"
+COPY target/MCSTurtleTracker-backend-0.0.1-SNAPSHOT.jar .
+ENTRYPOINT ["java", "-jar", "MCSTurtleTracker-backend-0.0.1-SNAPSHOT.jar"]
+```
+This file does almost the same as the front-end file, however it won't build the application. It will simply copy the .jar file and run it using Java.
+
+```yaml
+# docker-compose.yml
+version: '3.4'
+services:
+    mcst_db_dev:
+        container_name: MCST-DB
+        image: mysql:5
+        environment:
+            MYSQL_DATABASE: 'mcst_db_dev'
+            MYSQL_ROOT_PASSWORD: 'xxxx'
+            TZ: "Europe/Amsterdam"
+        ports:
+            - '25002:3306'
+        expose:
+            - '25002'
+        volumes:
+            - mcst_db_volume:/var/lib/mysql
+            
+    mcst_backend:
+        container_name: MCST-Server
+        image: $REGISTRY_URL/mcst_backend:latest
+        environment:
+            SPRING_DATASOURCE_URL: 'jdbc:mysql://mcst_db_dev:3306/mcst_db_dev'
+            SPRING_DATASOURCE_USERNAME: 'xxxx'
+            SPRING_DATASOURCE_PASSWORD: 'xxxx'
+            SPRING_JPA_HIBERNATE_DDL-AUTO: 'update'
+            SPRING_JPA_DATABASE-PLATFORM: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            CREATEDATABASEIFNOTEXISTS: 'true'
+            SERVER_SERVLET_CONTEXT-PATH: '/api'
+            SERVER_PORT: 25000
+            TZ: "Europe/Amsterdam"
+        ports:
+            - '25000:25000'
+        expose:
+            - '25000'
+        depends_on:
+            - mcst_db_dev
+        stdin_open: 'true'
+        tty: 'true'
+volumes:
+    mcst_db_volume:
+```
+This docker-compose file is a little bit different from the front-end file because, this file starts two containers. It will also start a MySQL v5 container with a Docker Volume to make sure the data isn't lost when the container is stopped and removed.
+Then it will start the back-end server with some environment variables and settings for the database connection.
+Because the back-end server won't start/run without a database, I've specified that the server depends on the database.
+Another nice feature is that because we have both containers in one file, it will also create a Docker network with both in it so the back-end can communicate with the database without using it's external IP-address. Technically I don't have to expose port 25002 for the database but I like to have the ability to see the contents of the database externally.
 
 ### Pipeline
 #### Test Job
