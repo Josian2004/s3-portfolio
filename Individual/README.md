@@ -274,6 +274,14 @@ All the scripts for this mod are written in Lua.
 In our server we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information of all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
 
 ## Software Quality
+### Google Lighthouse
+It's very important that a website is fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of usefull data about load time, response times etc. and a lot of "Good Practises" so optimise a website.
+
+This is an example of a report:
+![Lighthouse Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/lighthousereport1.png)
+
+These reports are all uploaded to a self-hosted [Lighthouse CI Server](https://lighthouse.josian.nl) where you can easily see past reports and compare them to eachother to see in what areas the website has improved. It will also generate a graph so you can see the improvement over time.
+In the reports are also tips on how to improve the website even more with precise places where performance/load times can be gained.
 
 ## Continuous Integration and Deployment
 In order to automate the test and deploy process of my application, I implemented a CI/CD pipeline for both my webapp and server. This has been done with GitLab CI/CD.
@@ -396,7 +404,6 @@ lhci:
 
 ```
 For my front-end pipeline, I have a job which automatically runs Google Lighthouse and generates a performance report. This report is then uploaded to my own [Lighthouse CI Server](https://lighthouse.josian.nl).
-It will also generate a graph so you can see how the performance has changed over the commits.
 I could, if I wanted to, set up that if the site didn't perform well enough, the job would fail. However this is useless in a development phase because nobody expects the site to perform at 100% and the job would probably fail every time.
 #### Build Job
 ```yaml
