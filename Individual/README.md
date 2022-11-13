@@ -383,6 +383,21 @@ run_tests:
 ```
 This job is responsible for running all the necessary tests.
 
+```yaml
+# Front-end pipeline only
+lhci:
+    stage: test
+    image: cypress/browsers:node16.14.0-chrome99-ff97
+    script:
+        - npm install
+        - npm install -g @lhci/cli@0.9.x
+        - npm run build
+        - lhci autorun
+
+```
+For my front-end pipeline, I have a job which automatically runs Google Lighthouse and generates a performance report. This report is then uploaded to my own [Lighthouse CI Server](https://lighthouse.josian.nl).
+It will also generate a graph so you can see how the performance has changed over the commits.
+I could, if I wanted to, set up that if the site didn't perform well enough, the job would fail. However this is useless in a development phase because nobody expects the site to perform at 100% and the job would probably fail every time.
 #### Build Job
 ```yaml
 build:
