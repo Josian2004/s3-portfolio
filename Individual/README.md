@@ -24,6 +24,7 @@
     - [Resource server](#resource-server)
     - [External API](#external-api)
   - [Software Quality](#software-quality)
+    - [Google Lighthouse](#google-lighthouse)
   - [Continuous integration and deployment](#continuous-integration-and-deployment)
     - [Containerization](#containerization)
     - [Pipeline](#pipeline)
