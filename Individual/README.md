@@ -23,7 +23,7 @@
     - [Back-end](#back-end)
     - [Resource server](#resource-server)
     - [External API](#external-api)
-  - [Software Quality](#quality-assurance)
+  - [Quality Assurance](#quality-assurance)
     - [What is QA?](#what-is-qa)
     - [Test Plan](#test-plan)
     - [Implementation](#implementation)
