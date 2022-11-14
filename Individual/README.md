@@ -23,8 +23,15 @@
     - [Back-end](#back-end)
     - [Resource server](#resource-server)
     - [External API](#external-api)
-  - [Software Quality](#software-quality)
-    - [Google Lighthouse](#google-lighthouse)
+  - [Software Quality](#quality-assurance)
+    - [What is QA?](#what-is-qa)
+    - [Test Plan](#test-plan)
+    - [Implementation](#implementation)
+      - [Unit Tests](#unit-tests)
+      - [Integration Tests](#integration-tests)
+      - [UX](#ux)
+      - [SonarQube](#sonarqube)
+      - [Google Lighthouse](#google-lighthouse)
   - [Continuous integration and deployment](#continuous-integration-and-deployment)
     - [Containerization](#containerization)
     - [Pipeline](#pipeline)
@@ -274,8 +281,23 @@ All the scripts for this mod are written in Lua.
 ### [External API](https://docs.naamdorpboot.xyz/systems-api)
 In our server we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information of all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
 
-## Software Quality
-### Google Lighthouse
+## Quality Assurance
+### What is QA?
+In order to make sure that my app works and performs as expected, I need to test everything. There are two different types of tests, functional and non functional tests. 
+
+With functional tests you test if the code works as aspected, so that when I enter 2+2, the answer will actually be 4. If these tests fail then there is something very wrong in your code which will make your app not function properly.
+
+Non functional tests are there to test the quality of the code and app. It doesn't test if the app works as expected, but it is there to test how well the app works. Two examples are performance tests, to analyse load times and responsivness, and UX tests, to see if your UI is user-friendly and nice to use as a user.
+### Test Plan
+At the moment of writing, I don't have any complex logic in my back-end services amd this makes unit tests pretty useless for my application. However some parts I feel like do need to be tested with unit tests, so I'm going to write a few unit tests but my code probably won't get a 80% or higher code coverage. Things like a method to save something in a database isn't going to be tested by unit tests, these are tested with integration tests. The things I am going to test are exception handlling and JSON conversions. With exception handlling I want to test that the correct exceptions are thrown when something happens that shouldn't and that tose exceptions are correctly handled and not just thrown as a RuntimeExceptionm.
+
+
+### Implementation
+#### Unit Tests
+#### Integration Tests
+#### UX
+#### SonarQube
+#### [Google Lighthouse](https://lighthouse.josian.nl)
 It's very important that a website is fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of usefull data about load time, response times etc. and a lot of "Good Practises" so optimise a website.
 
 This is an example of a report:
