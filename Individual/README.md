@@ -234,8 +234,15 @@ o	Assigned system
 ## C4-Model
 ### Level 1
 ![Context Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C1.drawio.png)
+
+This is the whole MCS Ecosystem, these are all MCS Services which the MCS team have build and this diagram shows how they are connected with eachother. The main connection is ofcourse the Minecraft Server (MCS Server), this is where all of the data comes from and is being send to. Furthermore, Vincent (MCS Analyser) and I (MCS Turtle Tracker) both use the MCS Systems API. This API provides data about all the systems in our server, e.g. you can request a list with all of the farms or request a specific farm. I use this information to sort the turtles by system. 
+
+We also have a portal website, on this portal are buttons to go to every service we have. We have a authentication system implemented on this portal which we are going to use in the future to lock specific features from my app so not every random person can control the turtles.
+
 ### Level 2
 ![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C2.drawio.png)
+
+Now we are going to zoom-in om my application and the directly connected services. In this diagram you can specificly see what services are connected with eachother and how they communicate. It also shows that my app consists of a front-end web app, a back-end Java server and a MySQL database, and that there are websocket connections between my front-end and back-end and MCS server and back-end.
 
 ## Projects
 This project is actually working and deployed on my server so you can see it for yourself at:\
