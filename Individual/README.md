@@ -304,6 +304,11 @@ Performance is one of the most important aspects of a front-end application, a u
 #### Integration Tests
 #### UX
 #### SonarQube
+I've setup my own SonarQube server, everytime a report is generated it will be uploaded to this server where I can then inspect the report. It will scan my code for coverage, duplications, bugs and vulnerabilities. As stated in my test plan, the coverage will probably stay low because I fee that unit tests are not very usefull in my application.
+
+This is an example of a report
+![SonarQube Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/sonarqubereport1.png)
+
 #### Google Lighthouse
 It's very important that a website is fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of usefull data about load time, response times etc. and a lot of "Good Practises" so optimise a website.
 
@@ -409,6 +414,20 @@ Because the back-end server won't start/run without a database, I've specified t
 Another nice feature is that because we have both containers in one file, it will also create a Docker network with both in it so the back-end can communicate with the database without using it's external IP-address. Technically I don't have to expose port 25002 for the database but I like to have the ability to see the contents of the database externally.
 
 ### Pipeline
+#### Build Job
+```yaml
+build:
+    stage: build
+    image: eclipse-temurin:17-jdk-alpine
+    before_script:
+        - chmod +x mvnw
+    script: "./mvnw install"
+    artifacts:
+        paths:
+        - target
+```
+This job is responsible for building the application, it will run the *./mvnw install* command which will build the app into an executable .jar file and save the target folder so further jobs can use it.
+
 #### Test Job
 ```yaml
 run_tests:
@@ -435,22 +454,26 @@ lhci:
 ```
 For my front-end pipeline, I have a job which automatically runs Google Lighthouse and generates a performance report. This report is then uploaded to my own [Lighthouse CI Server](https://lighthouse.josian.nl).
 I could, if I wanted to, set up that if the site didn't perform well enough, the job would fail. However this is useless in a development phase because nobody expects the site to perform at 100% and the job would probably fail every time.
-#### Build Job
+
 ```yaml
-build:
-    stage: build
-    image: eclipse-temurin:17-jdk-alpine
-    rules:
-        - if: '$CI_COMMIT_BRANCH == "main"'
-    before_script:
-        - chmod +x mvnw
-    script: "./mvnw install"
-    artifacts:
+# Back-end pipeline only
+sonarqube-check:
+    stage: test
+    image: 
+        name: sonarsource/sonar-scanner-cli:latest
+        entrypoint: [""]
+    variables:
+        SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+        GIT_DEPTH: "0"
+    cache:
+        key: "${CI_JOB_NAME}"
         paths:
-        - target/*.jar
+        - .sonar/cache
+    script: 
+        - sonar-scanner
+    allow_failure: true
 ```
-This job is responsible for building the application, it will run the *./mvnw install* command which will build the app into an executable .jar file and save it 
-so further jobs can use it. In *rules* I've specified that this job should only run when pushed to the main branch.
+For my back-end pipeline, I have a job which automatically generates a SonarQube report and uploads it to my own SonarQube server. I also could make this job fail if the score wasn't at a certain level, however because I don't intend on implementing very many unit tests it would fail everytime.
 
 #### Package Job
 ```yaml
@@ -499,7 +522,7 @@ Even though it is sufficient for this semester to "deploy" to the Docker Hub, I 
 So in the autumn break of 2022, I bought a HP Workstation from Marktplaats and repurposed it as a home server. I deleted Windows and installed Ubuntu because Linux is just way better and faster for a server than Windows.\
 Before I had bought this server, I came across a few issues with my CI/CD. First of all, the Docker Hub only allows for one free private repository which isn't enough for both my webapp and server so I would need to host my own registry somewhere. Second of all, Fontys doesn't have any shared GitLab-runners... So I needed to host these myself aswell. And lastly, I needed a place to deploy my app with the posibility to expose it to the internet.
 
-I now have a Docker Registry, two GitLab-Runners and ofcourse my whole MCST Application running on my server and they are accessible via my domain josian.nl, I have also set up a [Nginx](https://www.nginx.com/) Reverse Proxy so I can use fancy sub-domains like mcst.josian.nl for my apps instead of ugly ports after my urls. 
+I now have a Docker Registry, two GitLab-Runners, a Lighthouse CI Server, a SonarQube server and ofcourse my whole MCST Application running on my server and they are accessible via my domain josian.nl, I have also set up a [Nginx](https://www.nginx.com/) Reverse Proxy so I can use fancy sub-domains like mcst.josian.nl for my apps instead of ugly ports after my urls. 
 With the use of [LetsEncrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/) I secured my applications with SSL-certificates and HTTPS, this also gives me the posibility to build my app into a PWA.
 
 I know this has nothing to do with my learning outcomes for this semester, but I've learned alot of other skills like basic infrastructure and security while setting this up which I feel are also important as a software engineer and it was ofcourse fun to do.
