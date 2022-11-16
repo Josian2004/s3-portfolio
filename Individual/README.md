@@ -132,6 +132,7 @@ I have come up with another idea which involves the Minecraft Server I play on w
 &nbsp;
 &nbsp;
 # MCSTurtleTracker
+![MCST Banner](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/MCSTbanner.png)
 ## What is MCS?
 MCSynergy (or MCS for short) is a Minecraft Server where I play on with some friends, we have a mod installed called ComputerCraft which adds programmable computers and robots (turtles) to Minecraft. These are programmed in Lua and gives us the ability to automate a lot of things which wouldn’t normally be possible. 
 This mod has WebSocket connections and HTTP-requests build in which gives me the opportunity to share data between these turtles and some external application which is exactly what I’m going to build.
