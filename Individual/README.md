@@ -86,7 +86,7 @@ The last main feature is a live train tracker, I want to create a live map with 
 
 ## C4-Model
 ### Level 2
-![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-NS/C4Models-ContainerDiagram.png)
+![Container Model](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/C4-NS/C4Models-ContainerDiagram-drawio.png)
 
 ## Technology Stack
 ### Front-end Stack
