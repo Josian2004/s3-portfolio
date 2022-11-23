@@ -47,10 +47,34 @@ The "to" key is the device token which the developer should have saved somewhere
 
 Then we have two objects, a notification and a data object. The notification is for the push notification itself, so thats what the user will see on their screen. The data is for the app itself, it can use the given data to do something with it. E.g. the developer wants that when a notification with the title of the data object as "blue" is sent, the app changes it's color to blue. You can also use the data object to sent custom keys and variables that won't be shown in the push notification.
 
+In these objects we have some pretty self explanatory keys like title, the title of the notification, body, the body text of the notification and the sound. There is also a priority key, here you can enterr either "normal" or "high". With "normal" there might be a delay of a few minutes before the notification is delivered, while with "high" the notification is almost instantly delivered. "High" however does use more battery.
 
+
+## Apple (APNs) vs Google (FCM)
+
+Both Apple and Google have their own OSPNS, they have the same purpose but there are some differences between these two. Apple released APNs in 2009 and Google followed with their GCM in 2010, in 2014 the core infrasturcture of GCM was moved to Firebase and then renamed to FCM.
+
+### Differences
+#### Acounts
+One major difference is that for APNs (and FCM with iOS) you need an Apple Developers Account which you can buy for $100/year. FCM for Android however is completely free of charge.
+
+#### Notification Format
+
+They use a different format for sending notifications. APNs sends notifications als string or dictionary, these contain sound, badge, token, body and title. FCM on the other hand uses JSON to send notifications as seen in the example above.
+
+#### Payload
+
+There is a difference between payload size. With APNs you can send a notification up to 4 KB (only 256 bytes prior to iOS 8) while FCM only allows notifications up to 2 KB. However you can also send messages with FCM, these can be up to 4 KB.
+
+#### Storage of notifications
+Both services store notifications when the receiving device is offline or is unable to receive notifications, they do however store them differently. APNs stores one notification per app, so if the app receives a second notification the first one is overwritten. FCM doesn't store notifications per app but stores 100 notifications per device. For both services notifications are saved for a maximum of 28 days.
+
+#### Cross-platform
+APNs only supports iOS, MacOS, iPadOS and watchOS while FCM supports both iOS and Android.
 
 ## Sources
 - https://developer.apple.com/documentation/usernotifications
 - https://firebase.google.com/docs/cloud-messaging
 - https://www.airship.com/resources/explainer/push-notifications-explained/
 - https://onesignal.com/blog/what-is-a-push-notifications-service-and-how-does-it-work/
+- https://www.hexnode.com/blogs/comparison-apple-push-notification-service-apns-gcm-fcm-wns/
