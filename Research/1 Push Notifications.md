@@ -50,8 +50,8 @@ Then we have two objects, a notification and a data object. The notification is 
 In these objects we have some pretty self explanatory keys like title, the title of the notification, body, the body text of the notification and the sound. There is also a priority key, here you can enterr either "normal" or "high". With "normal" there might be a delay of a few minutes before the notification is delivered, while with "high" the notification is almost instantly delivered. "High" however does use more battery.
 
 
-## Apple (APNs) vs Google (FCM)
-
+## Comparing Apples to Oranges?
+What is the actual difference between the OSPNS of Apple and Google?
 Both Apple and Google have their own OSPNS, they have the same purpose but there are some differences between these two. Apple released APNs in 2009 and Google followed with their GCM in 2010, in 2014 the core infrasturcture of GCM was moved to Firebase and then renamed to FCM.
 
 ### Differences
