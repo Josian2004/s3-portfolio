@@ -308,6 +308,9 @@ Performance is one of the most important aspects of a front-end application, a u
 
 ### Implementation
 #### Unit/Integration Tests
+I've implemented integration tests and a few unit tests, the unit tests are only testing that the services actually updates the information in the local storage instead of adding a new instance to it. All of my controllers are tested (by integration tests) by actually executing the methods in the controller so that every layer is tested. I've created a seperate testing database where these tests can be run onto, so that I'm not using any production data for testing and manipulating it. At the beginning of every tests, all the data is removed from the database and mock data is added.
+
+These are all the tests which are being ran when a push is made to GitLab:
 [<img src="https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png" width="700"/>]([image.png](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png))
 #### UX
 #### SonarQube
