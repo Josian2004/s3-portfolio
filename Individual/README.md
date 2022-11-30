@@ -27,8 +27,7 @@
     - [What is QA?](#what-is-qa)
     - [Test Plan](#test-plan)
     - [Implementation](#implementation)
-      - [Unit Tests](#unit-tests)
-      - [Integration Tests](#integration-tests)
+      - [Unit/Integration Tests](#unitintegration-tests)
       - [UX](#ux)
       - [SonarQube](#sonarqube)
       - [Google Lighthouse](#google-lighthouse)
@@ -308,14 +307,14 @@ To improve the quality of my code, I'm going to implement a SolarQube codescan. 
 Performance is one of the most important aspects of a front-end application, a user will leave a website faster if the load times are slow and the site is not very responsive. To test this, I'm going to use Google Lighthouse. This is a tool which will test my whole website and generate a report with scores, the tested components are performance, accessibility, best practices, SEO and PWA. When the score of a component isn't at a 100%, Lighthouse will give tips on where to improve my code to get closer to that 100% score. It also checks if your website is PWA compatible, this is pretty usefull for me because I have the intention to make my app installable on mobile devices.
 
 ### Implementation
-#### Unit Tests
-#### Integration Tests
+#### Unit/Integration Tests
+[<img src="https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png" width="700"/>]([image.png](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png))
 #### UX
 #### SonarQube
 I've setup my own SonarQube server, everytime a report is generated it will be uploaded to this server where I can then inspect the report. It will scan my code for coverage, duplications, bugs and vulnerabilities. As stated in my test plan, the coverage will probably stay low because I fee that unit tests are not very usefull in my application.
 
 This is an example of a report
-![SonarQube Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/sonarqubereport1.png)
+![SonarQube Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/sonarqubereport2.png)
 
 #### Google Lighthouse
 It's very important that a website is fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of usefull data about load time, response times etc. and a lot of "Good Practises" so optimise a website.
