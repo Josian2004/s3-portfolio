@@ -267,7 +267,7 @@ The back-end consists of multiple microservices, each microservice contains two 
 
 The microservices are built with the SpringBoot framework and thus are written in Java.
 The reason I chose Java is, because I’ve used C# last semester and I want to learn a different language.
-I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.\
+I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.
 
 The back-end is made of microservices, I chose these because:
 1.	Improved scalability: It’s very easy to up or downgrade specific services or add a new service with a new feature without the need to dive deep into the code to change something. I can easily remove a service and the rest of the application should just continue to work.
