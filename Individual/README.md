@@ -38,14 +38,14 @@
 
 # NS-Tracker
 ## Project Description
-I’m going to create an application which a user can use to find all the information about the NS. The user can find information about a specific train station, train, or train route.
+I’m going to create an application that a user can use to find all the information about the NS. The user can find information about a specific train station, train, or train route.
 
-E.g., a user can search for a train station by name or station code and the application will show all the information about that station, like the UIC-code, all the departures and arrivals, all the tracks, etc.
+E.g., a user can search for a train station by name or station code and the application will show all the information about that station, like the UIC code, all the departures and arrivals, all the tracks, etc.
 
 The user could go even deeper and click on a specific train and see what kind of route it is driving and how many train units it has.\
 If the user has an account, he/she can favourite any train, station or train route and instantly see if there are any disruptions or problems with that train, station or train route and even get notifications.
 
-The last main feature is a live train tracker, I want to create a live map with the location of all the trains and stations. The user would be able to click on any of these and see the details. I already have the coordinates for the stations and I’m trying to get all the live locations for all the trains, however the NS-API only shows 10 trains so I’m trying to get them all at the same time.
+The last main feature is a live train tracker, I want to create a live map with the location of all the trains and stations. The user would be able to click on any of these and see the details. I already have the coordinates for the stations and I’m trying to get all the live locations for all the trains, however, the NS-API only shows 10 trains so I’m trying to get them all at the same time.
 
 
 ## Requirements
@@ -90,36 +90,36 @@ The last main feature is a live train tracker, I want to create a live map with 
 ## Technology Stack
 ### Front-end Stack
 #### Web-based Application
-For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web-app without the need to rewrite it.
+For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web app without the need to rewrite it.
 It’s also a lightweight framework which makes my app a lot more responsive and faster.
-Lastly, I have some very entry level experience with Vue which isn’t enough to build a full web-application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web-app.
+Lastly, I have some very entry-level experience with Vue which isn’t enough to build a full web application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web app.
 For styling I use CSS and Bootstrap, this is a styling library which makes it very easy and fast to create a good-looking webpage.
-Furthermore, I use a npm-package called Axios. This package gives me the ability to easily create HTTP-requests to my back-end API.
+Furthermore, I use an npm package called Axios. This package gives me the ability to easily create HTTP requests to my back-end API.
 
 #### Desktop Application
-Secondly, I want to create a desktop application, this application will be build using Unity Engine. To develop in Unity, you need to use C# so that’s what I will be using.
+Secondly, I want to create a desktop application, this application will be built using Unity Engine. To develop in Unity, you need to use C# so that’s what I will be using.
 I will be able to use Unity to create a 3D interface for my live train and station tracker.
 Unity has a big asset store, here you can download (sometimes freely) models to use in your 3D environment.
 
 ### Back-end Stack
 #### Logic
-The back-end consists of multiple microservices, each microservice contains two or three of these components:
+The back end consists of multiple microservices, each microservice contains two or three of these components:
 -	Controller: Responsible for listening and responding to incoming requests.
 -	Service: This is where all the logic for the specific microservice is.
--	Data Access Object (DAO): Responsible for communicating with the database and external API’s.
+-	Data Access Object (DAO): Responsible for communicating with the database and external APIs.
 The microservices are built with the SpringBoot framework and thus are written in Java.
-The reason I chose Java is, because I’ve used C# last semester and I want to learn a different language.
+The reason I chose Java is that I’ve used C# last semester and I want to learn a different language.
 I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.
 
-The back-end is made of microservices, I chose these because:
+The back end is made of microservices, I chose these because:
 1.	Improved scalability: It’s very easy to up or downgrade specific services or add a new service with a new feature without the need to dive deep into the code to change something. I can easily remove a service and the rest of the application should just continue to work.
 2.	Future-proofed: If a technology updates, I can easily replace a whole microservice with something better without the need to change code in other parts of my application which makes it very easy to maintain the application and keep updating it with the latest technologies and innovations.
-3.	Teamwork: This isn’t relevant for my individual project, but it is for the proftaak. With microservices you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
+3.	Teamwork: This isn’t relevant to my individual project, but it is for the proftaak. With microservices, you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
 
 #### External API
-I’m using an external API to get real-world data; I’ve chosen for the NS-API. 
+I’m using an external API to get real-world data; I’ve chosen the NS-API. 
 The API gives me access to a lot of NS data, e.g.:
--	All the stations where NS or a Dutch regional train company operates with some information like number of tracks and coordinates.
+-	All the stations where NS or a Dutch regional train company operates with some information like the number of tracks and coordinates.
 -	All the departures and arrivals from and to a specific station.
 -	Information about a specific train like how long the train is, what route it is driving and live coordinates.
 
@@ -133,15 +133,15 @@ I have come up with another idea which involves the Minecraft Server I play on w
 # MCSTurtleTracker
 ![MCST Banner](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/MCSTbanner.png)
 ## What is MCS?
-MCSynergy (or MCS for short) is a Minecraft Server where I play on with some friends, we have a mod installed called ComputerCraft which adds programmable computers and robots (turtles) to Minecraft. These are programmed in Lua and gives us the ability to automate a lot of things which wouldn’t normally be possible. 
-This mod has WebSocket connections and HTTP-requests build in which gives me the opportunity to share data between these turtles and some external application which is exactly what I’m going to build.
+MCSynergy (or MCS for short) is a Minecraft Server that I play on with some friends, we have a mod installed called ComputerCraft which adds programmable computers and robots (turtles) to Minecraft. These are programmed in Lua and give us the ability to automate a lot of things which wouldn’t normally be possible. 
+This mod has WebSocket connections and HTTP requests built in which allows me to share data between these turtles and some external applications which is exactly what I’m going to build.
 
 ## Project Description
-I’m going to create an application which the users of the Minecraft server of me and my friends can use to see any relevant data about the turtles.
-All the turtles will send messages to a central system, this system will then send these messages to my back-end. The back-end will transform and save this data and the front-end can request this data. 
-E.g., the turtle is done with a task and needs help from a player, the turtle will then send a message and the webapp will show this message.
+I’m going to create an application that the users of the Minecraft server of me and my friends can use to see any relevant data about the turtles.
+All the turtles will send messages to a central system, this system will then send these messages to my back-end. The back end will transform and save this data and the front end can request this data. 
+E.g., if the turtle is done with a task and needs help from a player, the turtle will then send a message and the web app will show this message.
 The second feature in my application is to have as much as possible control over the turtles, I want to be able to start and stop scripts and manually send commands to a turtle. 
-If I have enough time, I want to recreate the whole turtle interface in my webapp so you can easily see what the turtle is doing.
+If I have enough time, I want to recreate the whole turtle interface in my web app so you can easily see what the turtle is doing.
 
 ## Requirements
 *S: Specification
@@ -155,7 +155,7 @@ If I have enough time, I want to recreate the whole turtle interface in my webap
 -	**S-01.3:** The user must be able to filter the list by status.
 -	**S-01.4:** The user must be able to click on a turtle and be redirected to the corresponding detail page (FR-02).
 
-**FR-02:** The user must be able to see a detail page about every turtle.
+**FR-02:** The user must be able to see a detailed page about every turtle.
 -	**S-02.1:** The user must be able to see these attributes about a turtle:
 o	Current location (in x, y, z coordinates)
 o	Current dimension
@@ -167,14 +167,14 @@ o	Name
 o	Turtle-id
 o	Assigned system
 -	**S-02.2:** The user must be able to see all the recently send messages from this turtle.
--	**R-02.1:** The inventory of a turtle should only be inspected when the user presses on a button.
+-	**R-02.1:** The inventory of a turtle should only be inspected when the user presses a button.
 
 **FR-03:** The user must be able to turn a turtle on/off.
 -	**S-03.1:** The user must be able to turn them on/off from their corresponding detail page (FR-02).
--	**R-03.1:** The turtle must not completely be turned off; it should only stop with their current task or farm and return to their starting location.
+-	**R-03.1:** The turtle must not completely be turned off; it should only stop with its current task or farm and return to its starting location.
 
- **FR-04:** The user must see a list of all send messages.
--	**S-04.1:** The user must see a turtle-id, name, status when being send, assigned system, message type and message for all send messages.
+ **FR-04:** The user must see a list of all sent messages.
+-	**S-04.1:** The user must see a turtle-id, name, status when being sent, assigned system, message type and message for all sent messages.
 -	**S-04.2:** The user must be able to filter the list by turtle-id, name, assigned system, and message type.
 -	**R-04.1:** If the message doesn’t have a known system, hide the message.
 
@@ -198,7 +198,7 @@ o	Assigned system
 **NFR-01:** The current Lua scripts shouldn’t become very much slower.
 -	**S-01.1:** The system should run parallel to the main script, so it doesn’t halt the main script.
 
-**NFR-02:** All the turtles should send their information to one central computer; this computer will then send them to the back-end.
+**NFR-02:** All the turtles should send their information to one central computer; this computer will then send them to the back end.
 
 **NFR-03:** Only authorized users should be able to use this application.
 
@@ -218,7 +218,7 @@ o	Assigned system
 
 **US4:** As a user I want to be able to see all the messages sent by the turtles, so I know when a turtle logs an error or warning and I need to do something about it.
 
-**US5:** As a user I want to be able to CRUD new MSC Systems so that I can easily add a newly build system to the app and don’t have to do some technical things.
+**US5:** As a user I want to be able to CRUD new MSC Systems so that I can easily add a new build system to the app and don’t have to do some technical things.
 
 **US6:** As a user I want to be able to have a place where I can find information about how to implement the system and how it works so it is very easy for me to implement the system and I don’t have to ask someone for instructions.
 
@@ -228,109 +228,109 @@ o	Assigned system
 
 **US9:** As a user I want to be able to filter the messages by type, so I e.g., only see errors or warnings.
 
-**US10:** As a user I want to be able to see for how long a turtle has to wait before it starts a new run.
+**US10:** As a user, I want to be able to see how long a turtle has to wait before it starts a new run.
 
 
 ## C4-Model
 ### Level 1
 ![Context Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C1.drawio.png)
 
-This is the whole MCS Ecosystem, these are all MCS Services which the MCS team have build and this diagram shows how they are connected with eachother. The main connection is ofcourse the Minecraft Server (MCS Server), this is where all of the data comes from and is being send to. Furthermore, Vincent (MCS Analyser) and I (MCS Turtle Tracker) both use the MCS Systems API. This API provides data about all the systems in our server, e.g. you can request a list with all of the farms or request a specific farm. I use this information to sort the turtles by system. 
+This is the whole MCS Ecosystem, these are all MCS Services which the MCS team have built and this diagram shows how they are connected. The main connection is, of course, the Minecraft Server (MCS Server), this is where all of the data comes from and is sent. Furthermore, Vincent (MCS Analyser) and I (MCS Turtle Tracker) both use the MCS Systems API. This API provides data about all the systems in our server, e.g. you can request a list with all of the farms or request a specific farm. I use this information to sort the turtles by the system. 
 
-We also have a portal website, on this portal are buttons to go to every service we have. We have a authentication system implemented on this portal which we are going to use in the future to lock specific features from my app so not every random person can control the turtles.
+We also have a portal website, on this portal are buttons to go to every service we have. We have an authentication system implemented on this portal which we are going to use in the future to lock specific features from my app so not every random person can control the turtles.
 
 ### Level 2
 ![Container Model](https://github.com/Josian2004/s3-ip-portfolio/blob/main/portfolio_images/C4-MCST/C4-Model-C2.drawio.png)
 
-Now we are going to zoom-in om my application and the directly connected services. In this diagram you can specificly see what services are connected with eachother and how they communicate. It also shows that my app consists of a front-end web app, a back-end Java server and a MySQL database, and that there are websocket connections between my front-end and back-end and MCS server and back-end.
+Now we are going to zoom in on my application and the directly connected services. In this diagram, you can specifically see what services are connected and how they communicate. It also shows that my app consists of a front-end web app, a back-end Java server and a MySQL database and that there are WebSocket connections between my front-end and back-end and MCS server and back-end.
 
 ## Projects
 This project is actually working and deployed on my server so you can see it for yourself at:\
 https://mcst.josian.nl
 
 ### [Front-end](https://git.fhict.nl/I483898/mcst-vue-frontend)
-For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web-app without the need to rewrite it.
+For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web app without the need to rewrite it.
 It’s also a lightweight framework which makes my app a lot more responsive and faster.\
-Lastly, I have some very entry level experience with Vue which isn’t enough to build a full web-application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web-app.\
+Lastly, I have some very entry-level experience with Vue which isn’t enough to build a full web application, so I want to widen my Vue knowledge so that in the future I’m able to create a full Vue web app.\
 For styling I use CSS and Tailwind, this is a styling library which makes it very easy and fast to create a good-looking webpage.\
-Furthermore, I use a npm-package called Axios. This package gives me the ability to easily create HTTP-requests to the MCS Systems API (external API).
+Furthermore, I use an npm package called Axios. This package gives me the ability to easily create HTTP requests to the MCS Systems API (external API).
 
 ### [Back-end](https://git.fhict.nl/I483898/mcst-springboot-backend)
 #### Logic
-The back-end consists of multiple microservices, each microservice contains two or three of these components:
+The back end consists of multiple microservices, each microservice contains two or three of these components:
 -	Controller: Responsible for listening and responding to incoming requests.
--	Websocket Handlers: Responsible for listening for/sending messages over websocket.
+-	Websocket Handlers: Responsible for listening for/sending messages over WebSocket.
 -	Service: This is where all the logic for the specific microservice is.
--	Events: These are used for dependency inversion so that the service is independent from the e.g. websocket handlers.
+-	Events: These are used for dependency inversion so that the service is independent of the e.g. WebSocket handlers.
 -	Repository: Part of Spring Data JPA and responsible for communicating with the database.
--	Models: This is where all the data is being stored and used across the microservice.
+-	Models: This is where all the data is stored and used across the microservice.
 
 The microservices are built with the SpringBoot framework and thus are written in Java.
-The reason I chose Java is, because I’ve used C# last semester and I want to learn a different language.
+The reason I chose Java is that I’ve used C# last semester and I want to learn a different language.
 I chose SpringBoot because it is one of the biggest and most popular Java frameworks so there is a lot of documentation available. It also has Dependency Injection which makes it very easy to create loosely coupled modules.
 
-The back-end is made of microservices, I chose these because:
+The back end is made of microservices, I chose these because:
 1.	Improved scalability: It’s very easy to up or downgrade specific services or add a new service with a new feature without the need to dive deep into the code to change something. I can easily remove a service and the rest of the application should just continue to work.
 2.	Future-proofed: If a technology updates, I can easily replace a whole microservice with something better without the need to change code in other parts of my application which makes it very easy to maintain the application and keep updating it with the latest technologies and innovations.
-3.	Teamwork: This isn’t relevant for my individual project, but it is for the proftaak. With microservices you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
+3.	Teamwork: This isn’t relevant to my individual project, but it is for the proftaak. With microservices, you can easily split up the work between different team members without interfering with each other code. So, no more annoying code merging problems.
 
 #### Data Persistence
-I'm using the ORM Spring Data JPA because it is build-in in Spring Boot, the ORM is responsible for retreiving/saving all the data from my application.
+I'm using the ORM Spring Data JPA because it is build-in in Spring Boot, the ORM is responsible for retrieving/saving all the data from my application.
 I'm using a MySQL database for storing the data.
 
 ### Resource Server
 All my data is coming from the Minecraft server, it works as follows.\
-All the turtles (robots) send their data (location, message, etc.) to a central system over a "minecraft network". 
-When this central system receives a message, it will send the message over a websocket connection to the back-end server.\
-The system uses ComputerCraft (Minecraft Mod) which has a build-in websocket en HTTP feature to establish a connection with my back-end server.\
+All the turtles (robots) send their data (location, message, etc.) to a central system over a "Minecraft network". 
+When this central system receives a message, it will send the message over a WebSocket connection to the backend server.\
+The system uses ComputerCraft (Minecraft Mod) which has a built-in WebSocket en HTTP feature to establish a connection with my back-end server.\
 All the scripts for this mod are written in Lua.
 
 ### [External API](https://docs.naamdorpboot.xyz/systems-api)
-In our server we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information of all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
+In our server, we have a lot of farms (systems as we call them) and most turtles are assigned to a specific farm. To get the information on all the farms currently active in the server, a friend of mine has written an API where we can request said data. This way my app will always have the latest farm data without the need to hard-code a newly build farm.
 
 ## Quality Assurance
 ### What is QA?
-In order to make sure that my app works and performs as expected, I need to test everything. There are two different types of tests, functional and non functional tests. 
+To make sure that my app works and performs as expected, I need to test everything. There are two different types of tests, functional and non-functional tests. 
 
-With functional tests you test if the code works as aspected, so that when I enter 2+2, the answer will actually be 4. If these tests fail then there is something very wrong in your code which will make your app not function properly.
+With functional tests, you test if the code works as expected so that when I enter 2+2, the answer will actually be 4. If these tests fail then there is something very wrong in your code which will make your app not function properly.
 
-Non functional tests are there to test the quality of the code and app. It doesn't test if the app works as expected, but it is there to test how well the app works. Two examples are performance tests, to analyse load times and responsivness, and UX tests, to see if your UI is user-friendly and nice to use as a user.
+Non-functional tests are there to test the quality of the code and app. It doesn't test if the app works as expected, but it is there to test how well the app works. Two examples are performance tests, to analyse load times and responsiveness, and UX tests, to see if your UI is user-friendly and nice to use as a user.
 ### Test Plan
-At the moment of writing, I don't have any complex logic in my back-end services and this makes unit tests pretty useless for my application. However some parts I feel like do need to be tested with unit tests, so I'm going to write a few unit tests but my code probably won't get a 80% or higher code coverage. Things like a method to save something in a database aren'tt going to be tested by unit tests, these are tested with integration tests. The things I am going to test are exception handlling and JSON conversions. With exception handlling I want to test that the correct exceptions are thrown when something happens that shouldn't and that those exceptions are correctly handled and not just thrown as a RuntimeException. I also want to test the conversion of Json to Java object or the other way around, in the past I've had some incorrect conversions so that's why I find it important to test this. However I do find it important that I have the posibility to easily add unit tests in the future because in I have some new features planned and they might contain some more complex logic which I do want to test with unit tests.
+At the moment of writing, I don't have any complex logic in my back-end services and this makes unit tests pretty useless for my application. However some parts I feel like do need to be tested with unit tests, so I'm going to write a few unit tests but my code probably won't get an 80% or higher code coverage. Things like a method to save something in a database aren't going to be tested by unit tests, these are tested with integration tests. The things I am going to test are exception handling and JSON conversions. With exception handling, I want to test that the correct exceptions are thrown when something happens that shouldn't and that those exceptions are correctly handled and not just thrown as a RuntimeException. I also want to test the conversion of JSON to Java object or the other way around, in the past, I've had some incorrect conversions so that's why I find it important to test this. However, I do find it important that I can easily add unit tests in the future because in I have some new features planned and they might contain some more complex logic which I do want to test with unit tests.
 
-I do have a lot of components (units) which are dependent on eachother and it is vital for the integrity of my app that the communication between these is tested and functional. For this I'm going to write integration tests, these tests are going to make sure that e.g. a computer or log is properly saved in the database or that the requested data is correctly returned. There won't be any mock objects or interfaces with integration tests so I will need some form of a database to test it all on. It is a very bad idea to use your production database for testing so I'm going to host a second database for testing purposes, this database will be wiped every time it is done testing so that it won't influence the next testing phase.
+I do have a lot of components (units) which are dependent on each other and it is vital for the integrity of my app that the communication between these is tested and functional. For this I'm going to write integration tests, these tests are going to make sure that e.g. a computer or log is properly saved in the database or that the requested data is correctly returned. There won't be any mock objects or interfaces with integration tests so I will need some form of a database to test it all on. It is a very bad idea to use your production database for testing so I'm going to host a second database for testing purposes, this database will be wiped every time it is done testing so that it won't influence the next testing phase.
 
-I'm going to carry out a UX survey with the MCS Players to see what they think about the current UI and UX and if they want to see things differently or if they find some aspects of the UI confusing. I will then ofcourse implement the results in a new UI and run the survey again to see if the problems are resolved. Another tool I'm going to use to gain feedback is GitHub itself, MCS Players have the ability to open issues when they feel something needs to be different.
+I'm going to carry out a UX survey with the MCS Players to see what they think about the current UI and UX and if they want to see things differently or if they find some aspects of the UI confusing. I will then of course implement the results in a new UI and run the survey again to see if the problems are resolved. Another tool I'm going to use to gain feedback is GitHub itself, MCS Players can open issues when they feel something needs to be different.
 
-To improve the quality of my code, I'm going to implement a SolarQube codescan. This is a tool which will scan my code and create a report based on the results. It checks things like code coverage (how much % of my code is covered by unit tests) and duplicated code (the same code which is written on different places). It also generates a whole list with issues, these are things that I could improve in my code to better follow code standards and overall improve my code.
+To improve the quality of my code, I'm going to implement a SolarQube codescan. This is a tool which will scan my code and create a report based on the results. It checks things like code coverage (how much % of my code is covered by unit tests) and duplicated code (the same code which is written in different places). It also generates a whole list of issues, these are things that I could improve in my code to better follow code standards and overall improve my code.
 
-Performance is one of the most important aspects of a front-end application, a user will leave a website faster if the load times are slow and the site is not very responsive. To test this, I'm going to use Google Lighthouse. This is a tool which will test my whole website and generate a report with scores, the tested components are performance, accessibility, best practices, SEO and PWA. When the score of a component isn't at a 100%, Lighthouse will give tips on where to improve my code to get closer to that 100% score. It also checks if your website is PWA compatible, this is pretty usefull for me because I have the intention to make my app installable on mobile devices.
+Performance is one of the most important aspects of a front-end application, a user will leave a website faster if the load times are slow and the site is not very responsive. To test this, I'm going to use Google Lighthouse. This is a tool which will test my whole website and generate a report with scores, the tested components are performance, accessibility, best practices, SEO and PWA. When the score of a component isn't at a 100%, Lighthouse will give tips on where to improve my code to get closer to that 100% score. It also checks if your website is PWA compatible, this is pretty useful for me because I have the intention to make my app installable on mobile devices.
 
 ### Implementation
 #### Unit/Integration Tests
-I've implemented integration tests and a few unit tests, the unit tests are only testing that the services actually updates the information in the local storage instead of adding a new instance to it. All of my controllers are tested (by integration tests) by actually executing the methods in the controller so that every layer is tested. I've created a seperate testing database where these tests can be run onto, so that I'm not using any production data for testing and manipulating it. At the beginning of every tests, all the data is removed from the database and mock data is added.
+I've implemented integration tests and a few unit tests, the unit tests are only testing that the services actually update the information in the local storage instead of adding a new instance to it. All of my controllers are tested (by integration tests) by actually executing the methods in the controller so that every layer is tested. I've created a separate testing database where these tests can be run so that I'm not using any production data for testing and manipulating it. At the beginning of every test, all the data is removed from the database and mock data is added.
 
-These are all the tests which are being ran when a push is made to GitLab:
+These are all the tests which are being run when a push is made to GitLab:
 [<img src="https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png" width="700"/>]([image.png](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png))
 #### UX
 #### SonarQube
-I've setup my own SonarQube server, everytime a report is generated it will be uploaded to this server where I can then inspect the report. It will scan my code for coverage, duplications, bugs and vulnerabilities. As stated in my test plan, the coverage will probably stay low because I fee that unit tests are not very usefull in my application.
+I've set up my own SonarQube server, every time a report is generated it will be uploaded to this server where I can then inspect the report. It will scan my code for coverage, duplications, bugs and vulnerabilities. As stated in my test plan, the coverage will probably stay low because I feel that unit tests are not very useful in my application.
 
 This is an example of a report
 ![SonarQube Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/sonarqubereport2.png)
 
 #### Google Lighthouse
-It's very important that a website is fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of usefull data about load time, response times etc. and a lot of "Good Practises" so optimise a website.
+A website must be fast and responsive, studies have shown that users often leave a site because it takes too long to load. To test this, I've implemented that when a commit is made, a Google Lighthouse report is automatically generated. In this report is a lot of useful data about load time, response times etc. and a lot of "Good practices" to optimise a website.
 
 This is an example of a report:
 ![Lighthouse Report](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/lighthousereport1.png)
 
-These reports are all uploaded to a self-hosted [Lighthouse CI Server](https://lighthouse.josian.nl) where you can easily see past reports and compare them to eachother to see in what areas the website has improved. It will also generate a graph so you can see the improvement over time.
+These reports are all uploaded to a self-hosted [Lighthouse CI Server](https://lighthouse.josian.nl) where you can easily see past reports and compare them to each other to see in what areas the website has improved. It will also generate a graph so you can see the improvement over time.
 In the reports are also tips on how to improve the website even more with precise places where performance/load times can be gained.
 
 ## Continuous Integration and Deployment
-In order to automate the test and deploy process of my application, I implemented a CI/CD pipeline for both my webapp and server. This has been done with GitLab CI/CD.
-In order to keep my data secure, I've made environment variables for all the sensitive data like password, keys etc. These pipelines are automatically triggered when a push is made to either the main branch or development branch. However only when pushed to the main branch will the app be build and deployed, when pushed to the development branch it will only run the tests.
+To automate the test and deployment process of my application, I implemented a CI/CD pipeline for both my web app and server. This has been done with GitLab CI/CD.
+To keep my data secure, I've made environment variables for all the sensitive data like passwords, keys etc. These pipelines are automatically triggered when a push is made to either the main branch or the development branch. However, only when pushed to the main branch will the app be built and deployed, when pushed to the development branch it will only run the tests.
 
 ### Containerization
 To easily deploy my application, I have made use of Docker. I've created a Dockerfile for both my front-end and back-end
@@ -347,7 +347,7 @@ COPY . .
 RUN npm run build
 CMD [ "http-server", "dist" ]
 ```
-What this file does is, firstly it will install a http-server so I can run the app. Then it will copy the *package.json* and install all the necessary packages for the application to build. Then it will copy the rest of the files and build the application, this will then create a /dist folder which the http-server uses to start the app.
+What this file does is, firstly it will install an http-server so I can run the app. Then it will copy the *package.json* and install all the necessary packages for the application to build. Then it will copy the rest of the files and build the application, this will then create a /dist folder which the HTTP server uses to start the app.
 ```yaml
 # docker-compose.yml
 version: '3.4'
@@ -374,7 +374,7 @@ LABEL maintainer="MCSDevTeam"
 COPY target/MCSTurtleTracker-backend-0.0.1-SNAPSHOT.jar .
 ENTRYPOINT ["java", "-jar", "MCSTurtleTracker-backend-0.0.1-SNAPSHOT.jar"]
 ```
-This file does almost the same as the front-end file, however it won't build the application. It will simply copy the .jar file and run it using Java.
+This file does almost the same as the front-end file, however, it won't build the application. It will simply copy the .jar file and run it using Java.
 
 ```yaml
 # docker-compose.yml
@@ -418,10 +418,10 @@ services:
 volumes:
     mcst_db_volume:
 ```
-This docker-compose file is a little bit different from the front-end file because, this file starts two containers. It will also start a MySQL v5 container with a Docker Volume to make sure the data isn't lost when the container is stopped and removed.
+This docker-compose file is a little bit different from the front-end file because this file starts two containers. It will also start a MySQL v5 container with a Docker Volume to make sure the data isn't lost when the container is stopped and removed.
 Then it will start the back-end server with some environment variables and settings for the database connection.
 Because the back-end server won't start/run without a database, I've specified that the server depends on the database.
-Another nice feature is that because we have both containers in one file, it will also create a Docker network with both in it so the back-end can communicate with the database without using it's external IP-address. Technically I don't have to expose port 25002 for the database but I like to have the ability to see the contents of the database externally.
+Another nice feature is that because we have both containers in one file, it will also create a Docker network with both in it so the back-end can communicate with the database without using its external IP address. Technically I don't have to expose port 25002 for the database but I like to have the ability to see the contents of the database externally.
 
 ### Pipeline
 #### Build Job
@@ -463,7 +463,7 @@ lhci:
 
 ```
 For my front-end pipeline, I have a job which automatically runs Google Lighthouse and generates a performance report. This report is then uploaded to my own [Lighthouse CI Server](https://lighthouse.josian.nl).
-I could, if I wanted to, set up that if the site didn't perform well enough, the job would fail. However this is useless in a development phase because nobody expects the site to perform at 100% and the job would probably fail every time.
+I could, if I wanted to, set up that if the site didn't perform well enough, the job would fail. However, this is useless in a development phase because nobody expects the site to perform at 100% and the job would probably fail every time.
 
 ```yaml
 # Back-end pipeline only
@@ -483,7 +483,7 @@ sonarqube-check:
         - sonar-scanner
     allow_failure: true
 ```
-For my back-end pipeline, I have a job which automatically generates a SonarQube report and uploads it to my own SonarQube server. I also could make this job fail if the score wasn't at a certain level, however because I don't intend on implementing very many unit tests it would fail everytime.
+For my back-end pipeline, I have a job which automatically generates a SonarQube report and uploads it to my own SonarQube server. I also could make this job fail if the score wasn't at a certain level, however, because I don't intend on implementing very many unit tests it would fail every time.
 
 #### Package Job
 ```yaml
@@ -496,7 +496,7 @@ package:
         - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD $REGISTRY_URL
         - docker push $REGISTRY_URL/mcst_backend
 ```
-This job is responsible for preparing my application to be deployed, it will firstly build the dockerimage with the correct environment variables and then push this image to a self-hosted Docker Registry. Because this is a secured registry, it will first need to login using secret variables before it can push an image.
+This job is responsible for preparing my application to be deployed, it will first build the docker image with the correct environment variables and then push this image to a self-hosted Docker Registry. Because this is a secured registry, it will first need to log in using secret variables before it can push an image.
 
 #### Deploy Job
 ```yaml
@@ -518,21 +518,21 @@ deploy:
             docker pull $REGISTRY_URL/mcst_backend:latest &&
             docker-compose -f /media/josian/Hard\ Disk/Apps/MCST/Docker-compose/Backend/docker-compose.yml up -d"
 ```
-This is the final job and it's responsible for deploying the application to a server. Alpine Linux doesn't natively have a ssh-client installed so that is what I'm doing manually in the *before script*. Then I have to add my *SSH_PRIVATE_KEY* to the client so it can connect to my server using that key.\
+This is the final job and it's responsible for deploying the application to a server. Alpine Linux doesn't natively have an ssh-client installed so that is what I'm doing manually in the *before script*. Then I have to add my *SSH_PRIVATE_KEY* to the client so it can connect to my server using that key.\
 It will then connect to my server over SSH and do a few things:
 1. It will run *docker-compose down* which will stop and remove the old container.
-2. It will login to my Docker Registry.
+2. It will log in to my Docker Registry.
 3. It will pull the latest image which we pushed in the last job.
 4. Finally it will run *docker-compose up -d* which will start a new container with the latest image.
 And then my application is up and running again.
 
 ### Deployment Environment
-Even though it is sufficient for this semester to "deploy" to the Docker Hub, I felt that it wasn't complete until me and my friends could access my app from wherever we  are.
+Even though it is sufficient for this semester to "deploy" to the Docker Hub, I felt that it wasn't complete until me and my friends could access my app from wherever we are.
 
-So in the autumn break of 2022, I bought a HP Workstation from Marktplaats and repurposed it as a home server. I deleted Windows and installed Ubuntu.\
-Before I had bought this server, I came across a few issues with my CI/CD. First of all, the Docker Hub only allows for one free private repository which isn't enough for both my webapp and server so I would need to host my own registry somewhere. Second of all, Fontys doesn't have any shared GitLab-runners... So I needed to host these myself aswell. And lastly, I needed a place to deploy my app with the posibility to expose it to the internet.
+So in the autumn break of 2022, I bought an HP Workstation from Marktplaats and repurposed it as a home server. I deleted Windows and installed Ubuntu.\
+Before I bought this server, I came across a few issues with my CI/CD. First of all, the Docker Hub only allows for one free private repository which isn't enough for both my web app and server so I would need to host my own registry somewhere. Second of all, Fontys doesn't have any shared GitLab-runners... So I needed to host these myself as well. And lastly, I needed a place to deploy my app with the possibility to expose it to the internet.
 
-I now have a Docker Registry, two GitLab-Runners, a Lighthouse CI Server, a SonarQube server and ofcourse my whole MCST Application running on my server and they are accessible via my domain josian.nl, I have also set up a [Nginx](https://www.nginx.com/) Reverse Proxy so I can use fancy sub-domains like mcst.josian.nl for my apps instead of ugly ports after my urls. 
-With the use of [LetsEncrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/) I secured my applications with SSL-certificates and HTTPS, this also gives me the posibility to build my app into a PWA.
+I now have a Docker Registry, two GitLab-Runners, a Lighthouse CI Server, a SonarQube server and of course my whole MCST Application running on my server and they are accessible via my domain josian.nl, I have also set up a [Nginx](https://www.nginx.com/) Reverse Proxy so I can use fancy sub-domains like mcst.josian.nl for my apps instead of ugly ports after my URLs. 
+With the use of [LetsEncrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/) I secured my applications with SSL certificates and HTTPS, which also gives me the possibility to build my app into a PWA.
 
-I know this has nothing to do with my learning outcomes for this semester, but I've learned alot of other skills like basic infrastructure and security while setting this up which I feel are also important as a software engineer and it was ofcourse fun to do.
+I know this has nothing to do with my learning outcomes for this semester, but I've learned a lot of other skills like basic infrastructure and security while setting this up which I feel are also important as a software engineer and it was of course fun to do.
