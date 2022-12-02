@@ -313,6 +313,7 @@ I've implemented integration tests and a few unit tests, the unit tests are only
 These are all the tests which are being run when a push is made to GitLab:
 [<img src="https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png" width="700"/>]([image.png](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/passedIntTests.png))
 #### UX
+I've done a UX research to improve the UX of my application. The content and results of this research can be found [[here]](https://github.com/Josian2004/s3-portfolio/blob/main/Research/UXResearch.md).
 #### SonarQube
 I've set up my own SonarQube server, every time a report is generated it will be uploaded to this server where I can then inspect the report. It will scan my code for coverage, duplications, bugs and vulnerabilities. As stated in my test plan, the coverage will probably stay low because I feel that unit tests are not very useful in my application.
 
