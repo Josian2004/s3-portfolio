@@ -42,9 +42,9 @@ The second big solution that I received was the ability to collapse systems, tha
 ### "Logs" button
 ![Pie chart log button](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/piechartlogsbutton.png)
 
-I think the pie chart speaks for itself, non of the contestants realized that you could click on "Logs" to return to the first page. So this needs to be changed.
+I think the pie chart speaks for itself, none of the contestants realized that you could click on "Logs" to return to the first page. So this needs to be changed.
 
-The easiest solution for this is to add a << button next to the < button, this is something that most sites do and is familiar for everyone.
+The easiest solution for this is to add a << button next to the < button, this is something that most sites do and is familiar to everyone.
 
 ### "Logo" button
 ![Pie chart logo button](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/piechartlogobutton.png)
