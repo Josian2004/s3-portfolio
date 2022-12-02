@@ -246,7 +246,7 @@ Now we are going to zoom in on my application and the directly connected service
 
 ## Projects
 This project is actually working and deployed on my server so you can see it for yourself at:\
-https://mcst.josian.nl
+https://turtletracker.mncsynergy.nl
 
 ### [Front-end](https://git.fhict.nl/I483898/mcst-vue-frontend)
 For the front-end web-based application I used Vue.js as my JavaScript framework, I chose Vue because of its component system, which makes the code more easily readable and gives me the option to easily reuse components in other parts of my web app without the need to rewrite it.
