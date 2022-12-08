@@ -2,7 +2,7 @@
 
 ## Agile
 
-## Culttural Differences
+## Cultural Differences
 
 ## Ethics
 
