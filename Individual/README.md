@@ -537,3 +537,16 @@ I now have a Docker Registry, two GitLab-Runners, a Lighthouse CI Server, a Sona
 With the use of [LetsEncrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/) I secured my applications with SSL certificates and HTTPS, which also gives me the possibility to build my app into a PWA.
 
 I know this has nothing to do with my learning outcomes for this semester, but I've learned a lot of other skills like basic infrastructure and security while setting this up which I feel are also important as a software engineer and it was of course fun to do.
+
+## Business processes
+
+I've created two business processes for my application, one without my app and one with my app.
+
+![business process before](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-Before.drawio.png)
+
+There are a few problems with the current process. There is a big posibility that the player never notices that a turtle has crashed, this will result in the system staying inoperational. It could sometimes take days before someone comes across the system and sees that is isn't working anymore which isn't optimal. When someone does notice that something is wrong, they still need to search for the crashed turtle and they have no idea where this turtle could be. It can happen that the turtle got out of their designated space and is now walking somewhere where the player didn't even know was possible. This will result in a lose turtle and the player needing to replace the turtle.
+
+I've fixed these problems with my application like shown in the next business process.
+![business process after](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-After.drawio.png)
+
+Now when a turtle crashes, a message 
