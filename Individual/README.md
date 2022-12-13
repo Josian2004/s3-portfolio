@@ -35,6 +35,7 @@
     - [Containerization](#containerization)
     - [Pipeline](#pipeline)
     - [Deployment environment](#deployment-environment)
+  - [Business Processes](#business-processes)
 
 # NS-Tracker
 ## Project Description
@@ -544,9 +545,81 @@ I've created two business processes for my application, one without my app and o
 
 ![business process before](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-Before.drawio.png)
 
-There are a few problems with the current process. There is a big posibility that the player never notices that a turtle has crashed, this will result in the system staying inoperational. It could sometimes take days before someone comes across the system and sees that is isn't working anymore which isn't optimal. When someone does notice that something is wrong, they still need to search for the crashed turtle and they have no idea where this turtle could be. It can happen that the turtle got out of their designated space and is now walking somewhere where the player didn't even know was possible. This will result in a lose turtle and the player needing to replace the turtle.
+There are a few problems with the current process. There is a big posibility that the player never notices that a turtle has crashed, this will result in the system staying inoperational. It could sometimes take days before someone comes across the system and sees that is isn't working anymore which isn't optimal. When someone does notice that something is wrong, they still need to search for the crashed turtle and they have no idea where this turtle could be. It can happen that the turtle got out of their designated space and is now walking somewhere where the player didn't even know was possible. This will result in a loose turtle and the player needing to replace it.
 
 I've fixed these problems with my application like shown in the next business process.
 ![business process after](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-After.drawio.png)
 
-Now when a turtle crashes, a message 
+Now when a turtle crashes, a message is send to the server and the server then sends it to the website. The player then sees the message and can quickly see that something went wrong, the message also contains the reason for the crash so the player can instantly start to fix it. If rebooting fixes the problem, the player can do that easily from the website so he doesn't have to enter the game and physically go to the turtle. If the issue isn't resolved by a reboot, the player can see the last known location of the turtle. If the turtle has gotten loose, the player can see where it has gone to so he doesn't have to search the whole area.
+
+
+## Professional
+During the semester, I've had multiple feedback conversations with Jean-Paul about the progress of my application and learning outcomes. I've documented the contents of these conversations in feedpulse, the next screenshot is one of those.
+
+![Feedpulse Screenshot](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/feedpulseSs.png)
+
+Furthermore I have presented some of our sprint deliveries at iO and we have repeatedly requested feedback from our product owners at iO and then implemented that feedback in our product. More about this is explained in the Agile learning outcome.
+
+## Agile
+### What is agile?
+Agile is a way of managing projects that focuses on flexibility, collaboration, and customer satisfaction. It involves breaking a project down into smaller, manageable chunks, and working on them iteratively, with regular feedback and adjustments. This allows teams to respond to changes and challenges quickly and effectively, and to deliver high-quality results in a timely manner. Agile emphasizes teamwork and open communication, and is often used in software development, but it can be applied to a wide range of industries and projects.
+
+Some of the most commonly used agile methods include Scrum, Kanban, and Extreme Programming (XP).
+
+### Scrum
+Scrum is a framework for managing and completing complex projects. It is based on the idea of self-organizing teams, and emphasizes collaboration, continuous improvement, and regular review and adaptation of the project plan.
+
+In Scrum, a project is divided into small, manageable chunks called "sprints." Each sprint typically lasts two to four weeks, and at the end of each sprint, the team should have a working, shippable product.
+
+The Scrum framework includes several key roles, such as the Scrum Master, who is responsible for facilitating the process, and the Product Owner, who represents the stakeholders and prioritizes the work to be done. The team members are responsible for actually doing the work, and they are empowered to make decisions and manage their own work.
+
+During a sprint, the team holds daily meetings called "stand-ups" to discuss progress and identify any obstacles or issues that need to be addressed. At the end of the sprint, the team holds a review meeting to demo the new functionality and discuss what went well and what could be improved.
+
+Scrum is designed to be flexible and adaptable, and the team is encouraged to regularly review and adjust their process to improve efficiency and effectiveness. This focus on continuous improvement is one of the key benefits of using Scrum.
+
+### Kanban
+Kanban is a method for managing and improving work processes. It is based on the principles of just-in-time manufacturing, and focuses on visualizing work, limiting work in progress, and continuously improving the flow of work.
+
+In Kanban, the work is represented by cards on a board, and the board is typically divided into columns that represent the different stages of the work process. For example, a software development team might have columns for "To Do," "In Progress," and "Done." As work is completed, the cards are moved from left to right across the board, providing a visual representation of the work flow.
+
+One of the key principles of Kanban is limiting the amount of work in progress (WIP). By limiting the number of items that are actively being worked on at any given time, the team can avoid overloading individual team members and reduce the risk of bottlenecks or delays.
+
+Another key principle of Kanban is continuous improvement. The team is encouraged to regularly review the work process and look for ways to improve efficiency and effectiveness. This can involve making changes to the board, such as adding or removing columns, or adjusting the WIP limits for each column.
+
+
+### Extreme Programming
+Extreme Programming (XP) is a software development methodology that focuses on collaboration, simplicity, and feedback. It emphasizes frequent releases in short development cycles, and encourages collaboration between developers and customers throughout the project.
+
+In XP, the team works in small, self-organizing units, and each team member is responsible for a specific aspect of the project. The team members are expected to work closely together, and to communicate openly and regularly.
+
+One of the key principles of XP is frequent, small releases. The team is encouraged to break the project down into small chunks and to release working software as often as possible. This allows the team to get feedback from users and stakeholders early and often, and to make any necessary adjustments to the project plan.
+
+Another key principle of XP is simplicity. The team is encouraged to write simple, clean code that is easy to understand and maintain. This can help to reduce the risk of bugs and other issues, and can make it easier for new team members to get up to speed.
+
+
+### GP Agile
+(WIP)
+
+## Ethics
+### What is ethics in software engineering?
+Ethics in software engineering refers to the principles and values that guide the design and development of software. These principles and values are typically focused on ensuring that software is created and used in a responsible, fair, and transparent way.
+
+Some common ethical principles in software engineering include:
+
+- Respect for the user: This principle emphasizes the importance of considering the needs and interests of the users when designing and developing  software. This can include making sure that the software is easy to use, accessible to people with disabilities, and protects the privacy and security of the user's data.
+
+- Responsibility: This principle emphasizes the importance of being accountable for the effects of the software on people and society. This can include considering the potential risks and consequences of the software, and taking steps to mitigate any negative effects.
+
+- Fairness: This principle emphasizes the importance of treating all users equally and impartially. This can include avoiding discrimination or bias in the design or use of the software, and ensuring that the software is accessible and usable by people from diverse backgrounds and with different abilities.
+
+- Transparency: This principle emphasizes the importance of being open and transparent about the design and operation of the software. This can include providing clear and accurate information about the software, and giving users the ability to understand and control how their data is used.
+
+### Why is it important?
+Ethics is important because the software we create has the potential to impact people and society in significant ways. From the privacy of our personal data to the security of our critical infrastructure, the decisions we make as software engineers can have far-reaching consequences.
+
+By considering ethical principles and values when designing and developing software, we can help to ensure that the software we create is used in a responsible, fair, and transparent way. This can help to protect the rights and interests of users, and to mitigate any negative impacts of the software on people and society.
+
+Additionally, ethics is important in software engineering because it helps to build trust and confidence in the technology we create. As software becomes increasingly embedded in our lives, it is essential that people trust and have confidence in the software they use. By acting ethically, software engineers can help to build and maintain this trust, and can ensure that the technology we create is used in a way that benefits society.
+
+### Ethics in GP
+(WIP)
