@@ -36,6 +36,21 @@
     - [Pipeline](#pipeline)
     - [Deployment environment](#deployment-environment)
   - [Business Processes](#business-processes)
+  - [Agile](#agile)
+    - [What is Agile?](#what-is-agile)
+    - [What are the differences between Agile and Waterfall?](#what-are-the-differences-between-agile-and-waterfall)
+    - [Scrum](#scrum)
+    - [Kanban](#kanban)
+    - [Extreme Programming](#extreme-programming)
+    - [Agile in our project]()
+  - [Ethics](#ethics)
+    - [What is ethics in software engineering?](#what-is-ethics-in-software-engineering)
+    - [Why is it important?](#why-is-it-important)
+    - [Ethics in our project](#ethics-in-our-project)
+  - [Cultural Differences](#cultural-differences)
+    - [What are cultural differences?](#what-are-cultural-differences)
+    - [Why is it important in Software Development?](#why-is-it-important-in-software-development)
+- [Sources](#sources)
 
 # NS-Tracker
 ## Project Description
