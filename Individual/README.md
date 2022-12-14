@@ -566,6 +566,13 @@ Agile is a way of managing projects that focuses on flexibility, collaboration, 
 
 Some of the most commonly used agile methods include Scrum, Kanban, and Extreme Programming (XP).
 
+### What are the differences between Agile and Waterfall?
+Waterfall and Agile are two different approaches to software development. Waterfall is a linear, step-by-step approach in which each phase of the project must be completed before the next phase can begin. This means that the requirements for the project are defined up front and the project is planned in detail before any work begins.
+
+Agile, on the other hand, is a more flexible and iterative approach to software development. In Agile, the requirements for the project are not defined up front, and the project is planned and developed in short, incremental cycles known as "sprints." This allows the team to quickly adapt to changing requirements and feedback from users.
+
+Overall, the main difference between these two approaches is their focus and flexibility. Waterfall is a more structured and planned approach, while Agile is more flexible and adaptable. Both approaches have their strengths and can be effective in different situations.
+
 ### Scrum
 Scrum is a framework for managing and completing complex projects. It is based on the idea of self-organizing teams, and emphasizes collaboration, continuous improvement, and regular review and adaptation of the project plan.
 
@@ -621,5 +628,46 @@ By considering ethical principles and values when designing and developing softw
 
 Additionally, ethics is important in software engineering because it helps to build trust and confidence in the technology we create. As software becomes increasingly embedded in our lives, it is essential that people trust and have confidence in the software they use. By acting ethically, software engineers can help to build and maintain this trust, and can ensure that the technology we create is used in a way that benefits society.
 
-### Ethics in GP
-(WIP)
+### Ethics in our project
+I have personally encountered ethics as well, it was a part of our group project. We have created an app that the employees of iO Digital can use to 'track' their colleagues. It happened too often that someone needed their colleague, he then searched the whole building just to find out that the colleague was working from home that day. To fix this, we have created an app where employees can see whether the person they are looking for is at the office or home. All the users are prompted to set where they are at the beginning of every day, if they don't specify the system uses the wifi logs of the iO building to see if their phone is connected and if this is the case, their status is automatically set to 'at office'.
+
+To make this app as effective as possible, we need some sensitive personal data from its users like their full name, iO email address and some location data. To protect this data we were given an iO Legal Document that contained several measures to protect the privacy and data of the users and to make sure we weren't gathering any more data than was necessary. We also created some of our measures to protect the data which I will explain in the next few paragraphs.
+
+As stated earlier, transparency is one of the most important principles in ethical software development. That's why we have made sure that every user always can see the terms and services of our app, the user will first be prompted with them when they are verifying their account and on the settings page, the user can also always view them.
+
+Only iO employees must be allowed to access the app, originally we had the idea to use their own SSO to make sure that the user is an iO employee but we quickly heard that this wouldn't be possible in the short period of the project so we had to figure it out ourselves. We decided to use Google Login to authenticate users but we still had the problem that everyone with a Google account could just log in and use the app so we eventually came up with the idea to use the @iodigital.com email addresses to verify that the user was an iO employee. During the registration process, the user will be asked to fill in their @iodigital email, then our server would check if it was an iO Digital email and send them a verification email (as shown in the picture below).
+
+![iO Verification Email](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/verificationmail.png)
+
+Once verified, the user will be able to continue to the app and use it.
+
+To make sure that not everyone can just request the data from our API, we have implemented a token-based authentication system. When the user logs in he will receive a JWT from Google which will be included in every API call, in the back-end we check if the JWT is valid and if that user is a verified iO Digital employee, if it is all valid, only then will the server return the requested data. This token will expire after an hour to prevent the token is stolen and used for unauthorized access.
+
+The most sensitive data we use are the WiFi logs from the iO building, these contain MAC-Addresses, names and sometimes precise location data like the floor they are on. We will never directly save this data, we will only analyse it, and when that is done, delete it. The only thing we do save is if a MAC address from a user is detected at the office, we will save that. But when the data refreshes and that specific user isn't detected anymore, we will delete that status and there isn't any history saved. In conclusion, this means that the data is only saved when someone is actually at the office and when they leave, the data will be saved for a maximum of 15 minutes and then deleted.
+
+To prevent data leaks, all of the servers are running in the AWS environment of iO. These environments have some severe security measures which are actively monitored by iO so if something might go wrong, they will instantly see it and prevent any data leaks.
+
+
+## Cultural Differences
+### What are cultural differences?
+Cultural differences refer to the ways in which different cultures around the world have unique customs, beliefs, and ways of life. These differences can include things like language, dress, food, music, art, and religious practices. Cultural differences can also refer to the ways in which people from different cultures communicate, think, and view the world around them.
+
+### Why is it important in Software Development?
+Cultural differences can play a role in software development in a number of ways. For example, people from different cultures may have different communication styles, which can affect how they work together on a team. They may also have different ideas about what constitutes good design or how to prioritize tasks. In some cases, cultural differences can lead to misunderstandings or conflicts within the team.
+
+To address these issues, it's important for team members to be aware of and respect each other's cultural backgrounds. This can involve things like learning about each other's communication styles and working to find common ground. It can also involve being open to different perspectives and finding ways to incorporate different ideas into the project.
+
+Overall, cultural diversity can be a strength in software development, as it can bring a variety of perspectives and experiences to the table. By working together and respecting each other's cultural differences, teams can create high-quality software that meets the needs of a diverse user base.
+
+# Sources
+- https://www.agilealliance.org/agile101/
+- https://www.coursera.org/articles/what-is-agile-a-beginners-guide
+- https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+- https://www.forbes.com/sites/stevedenning/2016/08/13/what-is-agile/?sh=4c83a53a26e3
+- https://www.scrum.org/resources/what-is-scrum
+- https://www.techtarget.com/searchsoftwarequality/definition/Scrum
+- https://business.adobe.com/blog/basics/waterfall
+- https://www.projectmanager.com/guides/waterfall-methodology
+- https://kanbanize.com/kanban-resources/getting-started/what-is-kanban
+- https://www.atlassian.com/agile
+- [https://www.agilealliance.org/extreme-programming](https://www.agilealliance.org/glossary/xp/#q=~(infinite~false~filters~(postType~(~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'xp))~searchTerm~'~sort~false~sortDirection~'asc~page~1))
