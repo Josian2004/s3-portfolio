@@ -43,7 +43,7 @@
     - [Scrum](#scrum)
     - [Kanban](#kanban)
     - [Extreme Programming](#extreme-programming)
-    - [Agile in our project]()
+    - [Agile in our project](#agile-in-our-project)
   - [Ethics](#ethics)
     - [What is ethics in software engineering?](#what-is-ethics-in-software-engineering)
     - [Why is it important?](#why-is-it-important)
@@ -611,9 +611,16 @@ A software development methodology called Extreme Programming (XP) emphasizes co
 Frequent small releases are one of the founding principles of XP. Encourage the team to break the project into manageable chunks and release functional software as often as possible. To make necessary changes to the project plan, the team can do so by frequently soliciting feedback from users and stakeholders early in the project. Simplicity is another important XP principle. Encourage the group to create simple, clean code that is easy to read and maintain. This reduces the chance of errors and other problems and makes it easier for new team members to get up to speed.
 
 
-### GP Agile
-(WIP)
+### Agile in our project
+We used Scrum in our project, we had split the project in 5 3 week sprints. We started the day with a stand-up and ended it with a stand-down so we constantly knew who were doing what part of the project. At the end of every sprint we would go to the office of iO Digital to present the results of the last sprint, we would show them a short demo of the then finished product and we would ask if they had any comments on the current project.
 
+We would end the presentation with a plan for the next sprint, the stakeholders could then add or remove things from this plan to their liking. This way the stakeholder has direct impact on the userstories we will be working on in the next sprint and there would't be any surprises for them.
+
+The Agile tool we eventually used was Jira, this way we could easily track the progress of our project and it was also the main form of communication with our stakeholders. Everytime we needed help or we had a question, we would ask it in a Jira ticket and then assign it to them so they knew we needed help and could then provide it. Because the stakeholders had access to the Jira board, they could see at any time the progress of the sprint and if we were on track to finish the agreed userstories. Jira also gave us the posibility to generate a burndown chart, this is a chart where you can easily see if you are on track. The more tickets you complete, the more the red line goes down and while the red line is under the gray line, you are on track.
+
+![Jira Board](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/jiraboard1.png)
+
+![Burndown](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/burndown1.png)
 ## Ethics
 ### What is ethics in software engineering?
 In software development, ethics refers to the values and principles that guide the creation of software. Together, these principles and values aim to ensure responsible, fair, and transparent development and use of software. Typical ethical rules in software development are:
