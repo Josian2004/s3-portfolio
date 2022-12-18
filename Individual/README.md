@@ -578,46 +578,37 @@ Furthermore I have presented some of our sprint deliveries at iO and we have rep
 
 ## Agile
 ### What is agile?
-Agile is a way of managing projects that focuses on flexibility, collaboration, and customer satisfaction. It involves breaking a project down into smaller, manageable chunks, and working on them iteratively, with regular feedback and adjustments. This allows teams to respond to changes and challenges quickly and effectively, and to deliver high-quality results in a timely manner. Agile emphasizes teamwork and open communication, and is often used in software development, but it can be applied to a wide range of industries and projects.
+Agile is a project management style that focuses on flexibility, collaboration and customer satisfaction. This involves breaking projects into smaller, manageable chunks and working on them continuously with regular feedback and adjustments. It enables teams to respond quickly and efficiently to changes and challenges and deliver high-quality results on time. Agile, which emphasizes teamwork and open communication, is often used in software development, but can be applied to a wide variety of industries and projects. 
 
-Some of the most commonly used agile methods include Scrum, Kanban, and Extreme Programming (XP).
+Some of the most commonly used agile methods are Scrum, Kanban and Extreme Programming (XP).
 
 ### What are the differences between Agile and Waterfall?
-Waterfall and Agile are two different approaches to software development. Waterfall is a linear, step-by-step approach in which each phase of the project must be completed before the next phase can begin. This means that the requirements for the project are defined up front and the project is planned in detail before any work begins.
+Agile and Waterfall are two different approaches to software development. With the waterfall approach, each phase of the project must be completed before moving on to the next phase. This shows that the requirements of the project are determined in advance and detailed plans are prepared before any work is carried out.
 
-Agile, on the other hand, is a more flexible and iterative approach to software development. In Agile, the requirements for the project are not defined up front, and the project is planned and developed in short, incremental cycles known as "sprints." This allows the team to quickly adapt to changing requirements and feedback from users.
-
-Overall, the main difference between these two approaches is their focus and flexibility. Waterfall is a more structured and planned approach, while Agile is more flexible and adaptable. Both approaches have their strengths and can be effective in different situations.
+Agile, on the other hand, is a more adaptive and iterative approach to software development. Agile projects are planned and developed in short iteration cycles called "sprints" and project requirements are not predetermined. This allows the team to quickly respond to changing requirements and user feedback. The respective focus and flexibility of these two strategies ultimately differentiate them. Agile is more flexible and adaptable than the more organized and planned Waterfall. Each strategy has its advantages and is useful in different situations.
 
 ### Scrum
-Scrum is a framework for managing and completing complex projects. It is based on the idea of self-organizing teams, and emphasizes collaboration, continuous improvement, and regular review and adaptation of the project plan.
+Scrum is a framework for project management and completion. It is based on the concept of self-organizing teams, which emphasizes collaboration, continuous improvement, and regular review and revision of project plans. In the Scrum method, projects are divided into manageable chunks called "sprints". Sprints typically last two to four weeks, and at the end of each sprint, the team must have a functional, shippable product. 
 
-In Scrum, a project is divided into small, manageable chunks called "sprints." Each sprint typically lasts two to four weeks, and at the end of each sprint, the team should have a working, shippable product.
+There are several important roles within Scrum, including the Scrum Master, who facilitates the process, and the Product Owner, who represents the stakeholders and organizes the work to be done. Team members are empowered to direct their own work and decisions and are responsible for the actual work being done. 
 
-The Scrum framework includes several key roles, such as the Scrum Master, who is responsible for facilitating the process, and the Product Owner, who represents the stakeholders and prioritizes the work to be done. The team members are responsible for actually doing the work, and they are empowered to make decisions and manage their own work.
+To discuss progress and identify any obstacles or issues that need to be resolved, the team holds daily stand-up meetings throughout the sprint. The team holds a review meeting at the end of the sprint to demonstrate new features and review what is working and what needs improvement. Flexible and adaptable, Scrum encourages teams to periodically review and revise their procedures to improve efficiency and effectiveness. 
 
-During a sprint, the team holds daily meetings called "stand-ups" to discuss progress and identify any obstacles or issues that need to be addressed. At the end of the sprint, the team holds a review meeting to demo the new functionality and discuss what went well and what could be improved.
-
-Scrum is designed to be flexible and adaptable, and the team is encouraged to regularly review and adjust their process to improve efficiency and effectiveness. This focus on continuous improvement is one of the key benefits of using Scrum.
+One of the main advantages of using Scrum is its emphasis on continuous improvement.
 
 ### Kanban
-Kanban is a method for managing and improving work processes. It is based on the principles of just-in-time manufacturing, and focuses on visualizing work, limiting work in progress, and continuously improving the flow of work.
+Workflow control and improvement is done using Kanban. The focus is on visualizing work, limiting work in progress and continuously improving workflows. It is based on the principles of just-in-time production.
 
-In Kanban, the work is represented by cards on a board, and the board is typically divided into columns that represent the different stages of the work process. For example, a software development team might have columns for "To Do," "In Progress," and "Done." As work is completed, the cards are moved from left to right across the board, providing a visual representation of the work flow.
+Kanban represents work using cards on a board, and the board is usually divided into columns to represent the stages of the work process. For example, a list of tasks for a software development team might display Tasks, In Progress, and Complete columns. As work is completed, the cards move from left to right, providing a visual representation of the workflow. 
 
-One of the key principles of Kanban is limiting the amount of work in progress (WIP). By limiting the number of items that are actively being worked on at any given time, the team can avoid overloading individual team members and reduce the risk of bottlenecks or delays.
+Limiting work in process (WIP) is one of the core concepts of Kanban. Teams can prevent individual team members from becoming overwhelmed and reduce the potential for bottlenecks or delays by limiting the number of projects they are actively working on at any given time. 
 
-Another key principle of Kanban is continuous improvement. The team is encouraged to regularly review the work process and look for ways to improve efficiency and effectiveness. This can involve making changes to the board, such as adding or removing columns, or adjusting the WIP limits for each column.
-
+Continuous improvement is one of the main principles of Kanban. Teams are encouraged to regularly evaluate work processes and look for opportunities to improve efficiency and effectiveness.
 
 ### Extreme Programming
-Extreme Programming (XP) is a software development methodology that focuses on collaboration, simplicity, and feedback. It emphasizes frequent releases in short development cycles, and encourages collaboration between developers and customers throughout the project.
+A software development methodology called Extreme Programming (XP) emphasizes communication, clarity, and feedback. It focuses on frequent releases with short development cycles and facilitates collaboration between customers and developers throughout the project. With the XP approach, each team member is responsible for a specific area of the project. The team works compactly, self-organizing. A close working relationship and open, frequent communication is required between team members.
 
-In XP, the team works in small, self-organizing units, and each team member is responsible for a specific aspect of the project. The team members are expected to work closely together, and to communicate openly and regularly.
-
-One of the key principles of XP is frequent, small releases. The team is encouraged to break the project down into small chunks and to release working software as often as possible. This allows the team to get feedback from users and stakeholders early and often, and to make any necessary adjustments to the project plan.
-
-Another key principle of XP is simplicity. The team is encouraged to write simple, clean code that is easy to understand and maintain. This can help to reduce the risk of bugs and other issues, and can make it easier for new team members to get up to speed.
+Frequent small releases are one of the founding principles of XP. Encourage the team to break the project into manageable chunks and release functional software as often as possible. To make necessary changes to the project plan, the team can do so by frequently soliciting feedback from users and stakeholders early in the project. Simplicity is another important XP principle. Encourage the group to create simple, clean code that is easy to read and maintain. This reduces the chance of errors and other problems and makes it easier for new team members to get up to speed.
 
 
 ### GP Agile
@@ -625,24 +616,20 @@ Another key principle of XP is simplicity. The team is encouraged to write simpl
 
 ## Ethics
 ### What is ethics in software engineering?
-Ethics in software engineering refers to the principles and values that guide the design and development of software. These principles and values are typically focused on ensuring that software is created and used in a responsible, fair, and transparent way.
+In software development, ethics refers to the values and principles that guide the creation of software. Together, these principles and values aim to ensure responsible, fair, and transparent development and use of software. Typical ethical rules in software development are:
 
-Some common ethical principles in software engineering include:
+- Respect for users: This principle emphasizes the importance of taking into account the needs and interests of users when designing and developing software. This can mean that the software is user-friendly, accessible to people with disabilities, and secure to protect user data and privacy. 
 
-- Respect for the user: This principle emphasizes the importance of considering the needs and interests of the users when designing and developing  software. This can include making sure that the software is easy to use, accessible to people with disabilities, and protects the privacy and security of the user's data.
+- Responsibility: This principle emphasizes the importance of being responsible for the impact of software on individuals and society. This may include the potential risks and consequences of the software, as well as precautions to minimize any adverse effects. 
 
-- Responsibility: This principle emphasizes the importance of being accountable for the effects of the software on people and society. This can include considering the potential risks and consequences of the software, and taking steps to mitigate any negative effects.
+- Fairness: This principle emphasizes the value of fair and equitable treatment of all users. This may include ensuring that the software is accessible and usable by people of diverse backgrounds and abilities, and avoiding discrimination or bias in its development or use. 
 
-- Fairness: This principle emphasizes the importance of treating all users equally and impartially. This can include avoiding discrimination or bias in the design or use of the software, and ensuring that the software is accessible and usable by people from diverse backgrounds and with different abilities.
-
-- Transparency: This principle emphasizes the importance of being open and transparent about the design and operation of the software. This can include providing clear and accurate information about the software, and giving users the ability to understand and control how their data is used.
+- Transparency: This principle emphasizes the importance of being open and transparent about how software is designed and works. One way is to enable users to understand and manage their data usage by providing clear and accurate information about the software.
 
 ### Why is it important?
-Ethics is important because the software we create has the potential to impact people and society in significant ways. From the privacy of our personal data to the security of our critical infrastructure, the decisions we make as software engineers can have far-reaching consequences.
+Because the software we develop has the potential to significantly impact people and society, ethics are paramount. As software engineers, the choices we make can have far-reaching consequences, from the security of our critical infrastructure to the privacy of our personal data. We can help ensure that software is used responsibly, fairly and transparently, while considering ethical principles and values in its design and development. This not only reduces the negative impact of software on people and society, but also helps protect the rights and interests of users. 
 
-By considering ethical principles and values when designing and developing software, we can help to ensure that the software we create is used in a responsible, fair, and transparent way. This can help to protect the rights and interests of users, and to mitigate any negative impacts of the software on people and society.
-
-Additionally, ethics is important in software engineering because it helps to build trust and confidence in the technology we create. As software becomes increasingly embedded in our lives, it is essential that people trust and have confidence in the software they use. By acting ethically, software engineers can help to build and maintain this trust, and can ensure that the technology we create is used in a way that benefits society.
+Furthermore, ethics are essential in software development because they help build trust in the technology we produce. As software becomes more and more integrated into our daily lives, people need to trust and rely on the software they use. Software developers can help build and maintain this trust through ethical behavior. They can also ensure that the technologies they develop are used in ways that benefit society.
 
 ### Ethics in our project
 I have personally encountered ethics as well, it was a part of our group project. We have created an app that the employees of iO Digital can use to 'track' their colleagues. It happened too often that someone needed their colleague, he then searched the whole building just to find out that the colleague was working from home that day. To fix this, we have created an app where employees can see whether the person they are looking for is at the office or home. All the users are prompted to set where they are at the beginning of every day, if they don't specify the system uses the wifi logs of the iO building to see if their phone is connected and if this is the case, their status is automatically set to 'at office'.
