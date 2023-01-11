@@ -16,7 +16,6 @@ A way to do this is with tokens, tokens are unique, randomly generated strings t
 The client can then use this token to make authorized API requests, they will include the token in the header of the request. The server will then check if the received token is valid and if they are authorized to use the API, to do this the server will send the token to the authentication server and they will tell if the token is valid and if they are authorized. If that is the case the API will allow the request but if the token is invalid or expired, it will deny the request and return a '401' code, this means UNAUTHORIZED and then the client will know why its request was denied.
 
 In summary, this will prevent random people, with knowledge of the API/WS urls, from accessing the API to send and receive data. Now a client (Minecraft Server or MCS Player) will need to verify who they are to do things like send computer info, locations, messages etc and control the turtles. But hackers could still intercept the token and use it for themselves but this can be fixed with SSL.
-### XSS (Cross Site Scripting)
 
 ### SSL
 SSL (Secure Sockets Layer) is a security protocol that provides secure communication over the internet, it uses public key and symmetric key encryption to secure and encrypt the data send between a client and a server.
@@ -29,7 +28,11 @@ Another way to secure an API is rate limiting, this is a technique to limit the 
 
 ## How will I implement it in my own application.
 ### MCSAuth (Authorization)
+We have created our own authorization service called 'MCSAuth', we can use this server to verify that the user is a valid MCS player or the actual Minecraft server. Every player has their own login credentials which they can use to request a token from our authorization server, this token is then saved as a cookie in the browser and can be used on every mcsynergy.nl website to authenticate. Whenever the user wants to do something authorized, the browser will send their token with the request and the server will then validate the token and return the requested data if valid.
 
+The Minecraft server itself also has their own login credentials, we have a computer in our server which can request a token from our authorization server. Every other computer/turtle in the server can then use this token to validate themselfs. This makes sure that the Minecraft server connected to my server is actually the MCSynergy server and not a random user with Postman.
+
+This whole system makes sure that data is only returned if the client is an authorized MCSynergy player or server, so unauthorized people are unable to request or send fake/malicious data to my server.
 ### SSL
 
 ## Conslusion
