@@ -669,15 +669,33 @@ To address these issues, it's important for team members to be aware of and resp
 
 Overall, cultural diversity can be a strength in software development, as it can bring a variety of perspectives and experiences to the table. By working together and respecting each other's cultural differences, teams can create high-quality software that meets the needs of a diverse user base.
 
+### Hofstede's Cultural Dimensions
+This is a cross-cultural communication framework developed by Geert Hofstede, it can be used to see the effects of a society's culture on the values of its members and how these relate to behavior. It consists of six dimensions as explained below. He scored each country on a scale of 0 to 100 for each dimension.
+#### Power Distance Index
+This is a reference to the level of inequality that exists between those in positions of power and those who do not. A high score means that there is a large inequality in the distribution of power which society accepts, people understand "their place" in the system. While a low score is the opposite, power is shared and society does not accept situations where power is divided unequally. 
+
+#### Individualism versus Collectivism
+
+#### Masculinity versus Femininity
+
+#### Uncertainty Avoidance Index
+
+#### Long- versus Short-Termn Orientation
+
+#### Indulgence versus Restraint
+
 # Sources
-- https://www.agilealliance.org/agile101/
-- https://www.coursera.org/articles/what-is-agile-a-beginners-guide
-- https://www.cprime.com/resources/what-is-agile-what-is-scrum/
-- https://www.forbes.com/sites/stevedenning/2016/08/13/what-is-agile/?sh=4c83a53a26e3
-- https://www.scrum.org/resources/what-is-scrum
-- https://www.techtarget.com/searchsoftwarequality/definition/Scrum
-- https://business.adobe.com/blog/basics/waterfall
-- https://www.projectmanager.com/guides/waterfall-methodology
-- https://kanbanize.com/kanban-resources/getting-started/what-is-kanban
-- https://www.atlassian.com/agile
-- [https://www.agilealliance.org/extreme-programming](https://www.agilealliance.org/glossary/xp/#q=~(infinite~false~filters~(postType~(~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'xp))~searchTerm~'~sort~false~sortDirection~'asc~page~1))
+- Agile Alliance. (2022, 15 december). What is Agile? | Agile 101 | Agile Alliance. Agile Alliance |. https://www.agilealliance.org/agile101/
+- What is Agile? And when to use it. (z.d.). https://www.coursera.org/articles/what-is-agile-a-beginners-guide
+- Trapani, K. (2022, 21 november). What is Agile and What is Scrum? Cprime. https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+- Denning, S. (2016, 13 augustus). What Is Agile? Forbes. https://www.forbes.com/sites/stevedenning/2016/08/13/what-is-agile/?sh=4c83a53a26e3
+- What is Scrum? (z.d.). Scrum.org. https://www.scrum.org/resources/what-is-scrum
+- Lutkevich, B. (2021, 28 oktober). Scrum. Software Quality. https://www.techtarget.com/searchsoftwarequality/definition/Scrum
+- Waterfall Methodology: A Complete Guide. (2022, 18 maart). https://business.adobe.com/blog/basics/waterfall
+- Gantt Chart Software. (2022, 15 december). ProjectManager. https://www.projectmanager.com/guides/waterfall-methodology
+- What Is Kanban? Explained in 10 Minutes | Kanbanize. (z.d.). Kanban Software for Agile Project Management. https://kanbanize.com/kanban-resources/getting-started/what-is-kanban
+- Atlassian. (z.d.). What is Agile? https://www.atlassian.com/agile
+- https:\/\/www.agilealliance.org\/author\/12#author. (2021, 11 maart). What is Extreme Programming (XP)? | Agile Alliance. Agile Alliance |. https://www.agilealliance.org/glossary/xp/
+- MindTools | Home. (z.d.). https://www.mindtools.com/a1ecvyx/hofstedes-cultural-dimensions
+- Wikipedia contributors. (2022, 27 december). Hofstede’s cultural dimensions theory. Wikipedia. https://en.wikipedia.org/wiki/Hofstede's_cultural_dimensions_theory
+- Burak, A. (2021, 3 november). 6 Best Practices to Overcome Cultural Differences in Offshore Software Development. Relevant Software. https://relevant.software/blog/6-best-practices-to-overcome-cultural-differences-in-offshore-software-development/
