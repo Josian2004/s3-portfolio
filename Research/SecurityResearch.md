@@ -40,13 +40,13 @@ I've done this by installing an SSL certificate on my server using Certbot and L
 ## Conslusion
 The best way to prevent unauthorized access to my server is by implementing a token-based authorization/authentication service, this makes sure that the client is a valid MCS Player or server and not a random person. To prevent people from intercepting the token and using it for themselves, I will be using an SSL certificate to encrypt all the data. I don't think that rate limiting is very useful in my situation, my application will only be used by MCS players and won't be publicly known so it isn't a very big target for DoS attacks and I trust that the MCS players won't DoS attack my server. If the application will be used by more people, it is a good solution to implement.
 ## Sources
-- https://blog.hubspot.com/website/api-security
-- https://nonamesecurity.com/learn-rest-api-security
-- https://www.f5.com/labs/learning-center/securing-apis-10-best-practices-for-keeping-your-data-and-infrastructure-safe
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-- https://infosec.mozilla.org/guidelines/web_security
-- https://owasp.org/www-community/attacks/xss/
-- https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
-- https://portswigger.net/web-security/cross-site-scripting
-- https://web.dev/strict-csp/
-- https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/
+- Juviler, J. (2022, 14 juni). 8 API Security Best Practices to Protect Sensitive Data. https://blog.hubspot.com/website/api-security
+- REST API Security - Protect APIs with Proven Security Controls. (z.d.). https://nonamesecurity.com/learn-rest-api-security
+- Securing APIs: 10 Best Practices for Keeping Your Data and Infrastructure Safe. (2020, 6 augustus). https://www.f5.com/labs/learning-center/securing-apis-10-best-practices-for-keeping-your-data-and-infrastructure-safe
+- Cross-Origin Resource Sharing (CORS) - HTTP | MDN. (2022, 5 december). https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+- Web Security. (z.d.). https://infosec.mozilla.org/guidelines/web_security
+- Cross Site Scripting (XSS) | OWASP Foundation. (z.d.). https://owasp.org/www-community/attacks/xss/
+- Cross Site Scripting Prevention - OWASP Cheat Sheet Series. (z.d.). https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
+- What is cross-site scripting (XSS) and how to prevent it? | Web Security Academy. (z.d.). https://portswigger.net/web-security/cross-site-scripting
+- Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP). (z.d.). web.dev. https://web.dev/strict-csp/
+- Ensure CSP is effective against XSS attacks. (z.d.). Chrome Developers. https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/
