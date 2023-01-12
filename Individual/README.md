@@ -660,7 +660,7 @@ To prevent data leaks, all of the servers are running in the AWS environment of 
 
 ## Cultural Differences
 ### What are cultural differences?
-Cultural differences refer to the ways in which different cultures around the world have unique customs, beliefs, and ways of life. These differences can include things like language, dress, food, music, art, and religious practices. Cultural differences can also refer to the ways in which people from different cultures communicate, think, and view the world around them.
+Cultural differences refer to the ways in which different cultures around the world have unique customs, beliefs, and ways of life. These differences can include things like language, dress, food, music, art, and religious practices. Cultural differences can also refer to the ways in which people from different cultures communicate, think, and view the world around them. (Cultural differences - Definition and more | THE-DEFINITION.COM, z.d.)
 
 ### Why is it important in Software Development?
 Cultural differences can play a role in software development in a number of ways. For example, people from different cultures may have different communication styles, which can affect how they work together on a team. They may also have different ideas about what constitutes good design or how to prioritize tasks. In some cases, cultural differences can lead to misunderstandings or conflicts within the team.
@@ -670,19 +670,26 @@ To address these issues, it's important for team members to be aware of and resp
 Overall, cultural diversity can be a strength in software development, as it can bring a variety of perspectives and experiences to the table. By working together and respecting each other's cultural differences, teams can create high-quality software that meets the needs of a diverse user base.
 
 ### Hofstede's Cultural Dimensions
-This is a cross-cultural communication framework developed by Geert Hofstede, it can be used to see the effects of a society's culture on the values of its members and how these relate to behavior. It consists of six dimensions as explained below. He scored each country on a scale of 0 to 100 for each dimension.
+This is a cross-cultural communication framework developed by Geert Hofstede, it can be used to see the effects of a society's culture on the values of its members and how these relate to behaviour. It consists of six dimensions, these different dimensions are: Power Distance, Individual versus Collectivism, Masculinity versus Femininity, Uncertainty avoidance, Long Term Orientation versus Short Term Orientation and Indulgence versus Restraint. He scored each country on a scale of 0 to 100 for each dimension. (Hofstede Insights, 2019 / MindTools | Home, z.d.)
+
 #### Power Distance Index
-This is a reference to the level of inequality that exists between those in positions of power and those who do not. A high score means that there is a large inequality in the distribution of power which society accepts, people understand "their place" in the system. While a low score is the opposite, power is shared and society does not accept situations where power is divided unequally. 
+This is a reference to the level of inequality that exists between those in positions of power and those who do not. A high score means that there is a large inequality in the distribution of power which society accepts, and people understand "their place" in the system. While a low score is the opposite, power is shared and society does not accept situations where power is divided unequally. (MindTools | Home, z.d.)
 
 #### Individualism versus Collectivism
+This is a reference to the strength of the ties that people have to others within their community, a high score means that they prefer a loosely-knit social framework where people are expected to take care of themselves and their immediate family. While a low score represents a preference for a tightly-knit social framework where people are supposed to be loyal to the group and defend their interests. (Hofstede Insights, 2019)
 
 #### Masculinity versus Femininity
+This is a reference to the distribution of roles between men and women (MindTools | Home, z.d.), in the masculinity side of this dimension a society prefers achievement, heroism, assertiveness and material rewards for success. While the feminity side of this dimension a society prefers cooperation, modesty, caring for the weak and quality of life. (Hofstede Insights, 2019)
 
 #### Uncertainty Avoidance Index
+This is a reference to the degree to which the members of a society feel uncomfortable with uncertainty and ambiguity. A high score means that people attempt to make life as predictable and controllable as possible and are intolerant of unorthodox behaviours and ideas while a low score means that people are more relaxed, open or inclusive. (Hofstede Insights, 2019 / MindTools | Home, z.d.)
 
-#### Long- versus Short-Termn Orientation
+#### Long- versus Short-Term Orientation
+Societies with a low score prefer to maintain traditions and norms and don't prefer changes in society, they also are typically religious and nationalistic, while societies with a high score encourage thrift and efforts in modern education as a way to prepare for the future. (Hofstede Insights, 2019 / MindTools | Home, z.d.)
 
 #### Indulgence versus Restraint
+Indulgence refers to a social environment that permits the relatively unrestricted enjoyment of basic and inherent human desires for the enjoyment of life and amusement.
+The word restraint refers to a society that restricts the satisfaction of needs and enforces restrictive social norms to do so. (Hofstede Insights, 2019)
 
 # Sources
 - Agile Alliance. (2022, 15 december). What is Agile? | Agile 101 | Agile Alliance. Agile Alliance |. https://www.agilealliance.org/agile101/
@@ -699,3 +706,5 @@ This is a reference to the level of inequality that exists between those in posi
 - MindTools | Home. (z.d.). https://www.mindtools.com/a1ecvyx/hofstedes-cultural-dimensions
 - Wikipedia contributors. (2022, 27 december). Hofstede’s cultural dimensions theory. Wikipedia. https://en.wikipedia.org/wiki/Hofstede's_cultural_dimensions_theory
 - Burak, A. (2021, 3 november). 6 Best Practices to Overcome Cultural Differences in Offshore Software Development. Relevant Software. https://relevant.software/blog/6-best-practices-to-overcome-cultural-differences-in-offshore-software-development/
+- Hofstede Insights. (2019, 26 augustus). National Culture. https://www.hofstede-insights.com/models/national-culture/
+- Cultural differences - Definition and more | THE-DEFINITION.COM. (z.d.). the-definition.com. https://the-definition.com/term/cultural-differences
