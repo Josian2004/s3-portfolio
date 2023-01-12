@@ -29,7 +29,6 @@
 - [User stories MCST](https://github.com/Josian2004/s3-portfolio/blob/main/Individual/README.md#user-stories)
 - [C4 MCST](https://github.com/Josian2004/s3-portfolio/blob/main/Individual/README.md#c4-model-1)
 - [User acceptance testing](https://github.com/Josian2004/s3-portfolio/blob/main/Research/UXResearch.md)
-- [Stakeholder feedback]()
 - [Quality Assurance](https://github.com/Josian2004/s3-portfolio/blob/main/Individual/README.md#quality-assurance)
 
 ### 7. You analyze and describe simple business processes that are related to your project.
@@ -37,4 +36,4 @@
 
 ### 8. You act in a professional manner during software development and learning.
 - [Professional](https://github.com/Josian2004/s3-portfolio/blob/main/Individual/README.md#professional)
-- [Professional in GP]()
+- [Professional in GP](https://github.com/Josian2004/s3-portfolio/blob/main/Individual/README.md#agile-in-our-project)

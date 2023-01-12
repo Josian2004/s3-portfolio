@@ -7,6 +7,9 @@ In the future I also want to give users of my website the ability to directly co
 
 In conclusion, at the moment, every random visitor or person who knows the URL of my WebSocket could take full control over the send data and the turtles in the Minecraft Server while only the Minecraft Server itself or MCS Players should have this ability so it is a pretty big problem.
 
+## Research Methods
+I've used several research methods from the DOT framework in this research report. I've done a lot of literature study, I've looked at several articles and documents with information about relevant topics. I've also created a prototype with the gathered knowledge, I've implemented an authentication system to my existing application. At last, I've performed a small security test to make sure that my prototype actually works, I've done this by trying to access my server with invalid credentials and tokens.
+
 ## What are the things I can do to prevent it?
 ### Authentication/Authorization
 The best way to prevent unauthorized access is to implement an authorization system so that users (and the Minecraft Server) need to verify that they are authorized to use the API.

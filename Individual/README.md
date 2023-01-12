@@ -36,6 +36,8 @@
     - [Pipeline](#pipeline)
     - [Deployment environment](#deployment-environment)
   - [Business Processes](#business-processes)
+    - [What is a Business Process?](#what-is-a-business-process)
+    - [My Business Processes](#my-business-processes)
   - [Professional](#professional)
   - [Agile](#agile)
     - [What is Agile?](#what-is-agile)
@@ -51,6 +53,13 @@
   - [Cultural Differences](#cultural-differences)
     - [What are cultural differences?](#what-are-cultural-differences)
     - [Why is it important in Software Development?](#why-is-it-important-in-software-development)
+    - [Hofstede's Cultural Dimensions](#hofstedes-cultural-dimensions)
+        - [Power Distance Index](#power-distance-index)
+        - [Individualism versus Collectivism](#individualism-versus-collectivism)
+        - [Masculinity versus Femininity](#masculinity-versus-femininity)
+        - [Uncertainty Avoidance Index](#uncertainty-avoidance-index)
+        - [Long- versus Short-Term Orientation](#long--versus-short-term-orientation)
+        - [Indulgence versus Restraint](#indulgence-versus-restraint)
 - [Sources](#sources)
 
 # NS-Tracker
@@ -556,15 +565,27 @@ With the use of [LetsEncrypt](https://letsencrypt.org/) and [Certbot](https://ce
 I know this has nothing to do with my learning outcomes for this semester, but I've learned a lot of other skills like basic infrastructure and security while setting this up which I feel are also important as a software engineer and it was of course fun to do.
 
 ## Business processes
+### What is a Business Process?
+A business process is a graphical representation of a workflow, it generates comprehensive diagrams and flowcharts containing insights into the functioning of a process. These are some insights a business process might contain:
+- Events and activities that occur within a workflow
+- Who owns or initiates those events and activities
+- Decision points and the different paths workflows can take based on their outcomes
+- Devices involved in the process
+- Timelines of the overall process and each step in the process
+- Success and failure rates of the process
 
+(What Is Business Process Modeling?, 2021)
+
+### My Business Processes:
 I've created two business processes for my application, one without my app and one with my app.
 
-![business process before](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-Before.drawio.png)
+![business process before](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-Before-2.0.jpg)
 
 There are a few problems with the current process. There is a big posibility that the player never notices that a turtle has crashed, this will result in the system staying inoperational. It could sometimes take days before someone comes across the system and sees that is isn't working anymore which isn't optimal. When someone does notice that something is wrong, they still need to search for the crashed turtle and they have no idea where this turtle could be. It can happen that the turtle got out of their designated space and is now walking somewhere where the player didn't even know was possible. This will result in a loose turtle and the player needing to replace it.
 
 I've fixed these problems with my application like shown in the next business process.
-![business process after](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-After.drawio.png)
+
+![business process after](https://github.com/Josian2004/s3-portfolio/blob/main/portfolio_images/BusinessProcess-After-2.0.jpg)
 
 Now when a turtle crashes, a message is send to the server and the server then sends it to the website. The player then sees the message and can quickly see that something went wrong, the message also contains the reason for the crash so the player can instantly start to fix it. If rebooting fixes the problem, the player can do that easily from the website so he doesn't have to enter the game and physically go to the turtle. If the issue isn't resolved by a reboot, the player can see the last known location of the turtle. If the turtle has gotten loose, the player can see where it has gone to so he doesn't have to search the whole area.
 
@@ -708,3 +729,9 @@ The word restraint refers to a society that restricts the satisfaction of needs 
 - Burak, A. (2021, 3 november). 6 Best Practices to Overcome Cultural Differences in Offshore Software Development. Relevant Software. https://relevant.software/blog/6-best-practices-to-overcome-cultural-differences-in-offshore-software-development/
 - Hofstede Insights. (2019, 26 augustus). National Culture. https://www.hofstede-insights.com/models/national-culture/
 - Cultural differences - Definition and more | THE-DEFINITION.COM. (z.d.). the-definition.com. https://the-definition.com/term/cultural-differences
+- What is Business Process Modeling Notation. (z.d.). Lucidchart. https://www.lucidchart.com/pages/bpmn
+- What Is Business Process Modeling? (2021, 1 oktober). IBM. https://www.ibm.com/cloud/blog/business-process-modeling
+- Kissflow, K. (2023, 5 januari). Business Process Modeling | Definition, Why, Technique and Benefits. Kissflow, Inc. https://kissflow.com/workflow/bpm/business-process-modeling/
+- What is Unified Modeling Language (UML)? (z.d.). https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-uml/
+- GeeksforGeeks. (2022, 15 december). Unified Modeling Language (UML) | An Introduction. https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/
+- What are Conceptual Models? (z.d.). The Interaction Design Foundation. https://www.interaction-design.org/literature/topics/conceptual-models
